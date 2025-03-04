@@ -8,7 +8,6 @@
   <meta name="description"
     content="Iglesia Pentecostal en Carrillos Bajo de Poás. Servicios dominicales, estudios bíblicos y comunidad cristiana. Horarios: Domingos 10am, Martes 7pm, Jueves 8am." />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Iglesia Santidad Pentecostal | Carrillos Bajo de Poás" />
   <meta property="og:description"
     content="Únete a nuestra comunidad cristiana en Poás. Servicios espirituales, adoración y estudios bíblicos." />
@@ -16,44 +15,41 @@
   <meta property="og:url" content="https://www.tudominio.com" />
   <meta property="og:type" content="website" />
 
-  <!-- Canonical -->
   <link rel="canonical" href="https://www.tudominio.com" />
   <link rel="icon" href="img/Logo.svg" type="image/svg+xml" />
 
-  <!-- Schema -->
   <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PlaceOfWorship",
+      "name": "Iglesia Santidad Pentecostal",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 metros norte del minisúper Don José",
+        "addressLocality": "Carrillos Bajo",
+        "addressRegion": "Poás",
+        "postalCode": "20804",
+        "addressCountry": "CR"
+      },
+      "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "12:00"
+        },
         {
-          "@context": "https://schema.org",
-          "@type": "PlaceOfWorship",
-          "name": "Iglesia Santidad Pentecostal",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "100 metros norte del minisúper Don José",
-            "addressLocality": "Carrillos Bajo",
-            "addressRegion": "Poás",
-            "postalCode": "20804",
-            "addressCountry": "CR"
-          },
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "Sunday",
-              "opens": "10:00",
-              "closes": "12:00"
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "Tuesday",
-              "opens": "8:00",
-              "closes": "9:30"
-            }
-          ],
-          "image": [
-            "https://www.tudominio.com/images/interior-iglesia.jpg",
-            "https://www.tudominio.com/images/actividades-comunitarias.jpg"
-           ]
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Tuesday",
+          "opens": "8:00",
+          "closes": "9:30"
         }
-        </script>
+      ],
+      "image": [
+        "https://www.tudominio.com/images/interior-iglesia.jpg",
+        "https://www.tudominio.com/images/actividades-comunitarias.jpg"
+      ]
+    }
+  </script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="Css/default.css" rel="stylesheet">
@@ -126,8 +122,16 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+
+    <div class="container mt-4 text-center">
+      <p>Porque yo Jehová soy tu Dios, quien te sostiene de tu mano derecha, y te dice: No temas,
+        yo te ayudo.</p>
+      <p><strong>Isaías 41:13</strong></p>
+    </div>
+
   </main>
-  <script>document.addEventListener('DOMContentLoaded', function () {
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
       const scrollElements = document.querySelectorAll('.scroll-reveal');
 
       function checkInView() {
@@ -142,7 +146,8 @@
 
       window.addEventListener('scroll', checkInView);
       checkInView(); // Verificar elementos visibles al cargar
-    });</script>
+    });
+  </script>
 </body>
 
 </html>

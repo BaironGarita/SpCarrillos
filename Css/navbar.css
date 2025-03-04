@@ -1,6 +1,8 @@
 /* Variables de colores y efectos para la navbar */
 :root {
   --color1: #2d3e50;
+  --color2: #005f6b;
+  --color3: #3498db;
   --color5: #00dffc;
   --Blanco-roto: #f5f5f5;
   --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -62,6 +64,14 @@
 
 .menu a:hover::after {
   width: 100%;
+}
+
+.nav-link.active {
+  background-color: var(--color1); /* Cambia esto al color que quieras */
+  border-radius: 5px;
+}
+.navbar-nav .nav-link.active {
+  color: white !important; /* !important para forzar el estilo (usar con precaución) */
 }
 
 /* Media queries para responsividad de la navbar */
