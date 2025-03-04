@@ -128,7 +128,7 @@ h2.scroll-reveal {
 
 @media (max-width: 768px) {
   main.container {
-    padding-top: 120px; /* Valor más pequeño para móviles si la navbar es más compacta */
+    padding-top: 40px; /* Valor más pequeño para móviles si la navbar es más compacta */
   }
 }
 

@@ -87,3 +87,9 @@ h1 {
   color: var(--color1); /* Usando color1 para la información de tiempo */
   font-weight: 500;
 }
+
+@media (max-width: 768px) {
+  main.container {
+    padding-top: auto; /* Valor más pequeño para móviles si la navbar es más compacta */
+  }
+}
