@@ -2,132 +2,134 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia de la Iglesia de Carrillos Bajos | Santidad Pentecostal</title>
     <meta name="description"
-        content="Reseña histórica de la Iglesia de Carrillos Bajos, desde su fundación en 1979 hasta la actualidad. Conoce los pastores que han liderado la congregación." />
+        content="Reseña histórica de la Iglesia de Carrillos Bajos, desde su fundación en 1979 hasta la actualidad. Conoce los pastores que han liderado la congregación.">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Historia | Iglesia Santidad Pentecostal | Carrillos Bajo de Poás" />
+    <meta property="og:title" content="Historia | Iglesia Santidad Pentecostal | Carrillos Bajo de Poás">
     <meta property="og:description"
-        content="Conoce la historia de nuestra iglesia desde su fundación en 1979 hasta la actualidad, y los pastores que nos han liderado." />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="https://www.tudominio.com/historia" />
-    <meta property="og:type" content="website" />
+        content="Conoce la historia de nuestra iglesia desde su fundación en 1979 hasta la actualidad, y los pastores que nos han liderado.">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="https://www.tudominio.com/historia">
+    <meta property="og:type" content="website">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://www.tudominio.com/historia" />
-    <link rel="icon" href="../img/Logo.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://www.tudominio.com/historia">
+    <link rel="icon" href="../img/Logo.svg" type="image/svg+xml">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="../Css/historia.css" rel="stylesheet">
-    <link href="../Css/navbar.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        merriweather: ['Merriweather', 'serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2d3e50',
+                        secondary: '#005f6b',
+                        third: '#3498db',
+                        fourth: '#00b4cc',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-    <header>
-        <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
-            <div class="menu container-fluid">
-                <a class="navbar-brand" href="../index.html">
-                    <img src="../img/Logo letras blancas.svg" alt="Logo" width="150" height="150"
-                        class="d-inline-block align-text-top">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="../index.html">Inicio</a>
-                        <a class="nav-link" href="Servicios.html">Servicios</a>
-                        <a class="nav-link" href="Nosotros.html">Nosotros</a>
-                        <a class="nav-link active" aria-current="page" href="Historia.html">Historia</a>
+<body class="bg-gray-100 text-gray-900 font-montserrat">
+    <header class="bg-primary text-white shadow-md fixed top-0 left-0 w-full z-50">
+        <nav class="fixed top-0 left-0 w-full bg-primary text-white shadow-md z-50">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center h-20">
+                    <a href="../index.html" class="flex-shrink-0">
+                        <img src="../img/Logo letras blancas.svg" alt="Logo" class="h-16 w-auto">
+                    </a>
+                    <!-- Botón móvil -->
+                    <button class="lg:hidden focus:outline-none " type="button" id="mobile-menu-button">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                    <!-- Menú de navegación -->
+                    <div class="hidden lg:flex lg:items-center lg:space-x-8" id="navigation-menu">
+                        <a href="../index.html" class="font-montserrat font-medium hover:text-third">Inicio</a>
+                        <a href="Servicios.html" class="font-montserrat font-mediumhover:text-third">Servicios</a>
+                        <a href="Nosotros.html" class="font-montserrat font-medium hover:text-third">Nosotros</a>
+                        <a href="Historia.html" class=" font-montserrat font-bold text-third">Historia</a>
                     </div>
+
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="container">
-        <h1 class="scroll-reveal">Historia de la Iglesia de Carrillos Bajo</h1>
-        <p class="text-muted"><strong>Fecha de Actualizacion:</strong> Julio 5, 2024</p>
+    <main class="container mx-auto mt-24 px-6">
+        <h1 class="text-4xl font-merriweather text-primary text-center mb-6">Historia de la Iglesia de Carrillos Bajo
+        </h1>
+        <p class="text-center text-gray-600 mb-8"><strong>Fecha de Actualización:</strong> Julio 5, 2024</p>
 
-        <section class="mb-4 scroll-reveal">
-            <h2>Fundación y primeros años</h2>
+        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg">
+            <h2 class="text-2xl font-merriweather text-secondary mb-2">Fundación y primeros años</h2>
             <p>La iglesia de Carrillos Bajo dio inicio en el año 1979, en una carpa, bajo la cobertura de la iglesia
                 evangélica nacional, con el Pastor José Arroyo como líder inicial.</p>
         </section>
 
-        <section class="mb-4 scroll-reveal">
-            <h2>Primeros miembros</h2>
+        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg">
+            <h2 class="text-2xl font-merriweather text-secondary mb-2">Primeros miembros</h2>
             <p>Algunas de las primeras personas que formaron parte de la iglesia fueron: Marielos Hernández, Solanyi
-                Díaz,
-                Miguel Oviedo, Leonel Sánchez, Dinorat Jiménez, Estrella Rubí, Álvaro Villalobos, Gilberth Gamboa,
-                Enrique
-                Castro, Guillermo Araya, Rolando Salas, entre otros.</p>
+                Díaz, Miguel Oviedo, Leonel Sánchez, entre otros.</p>
         </section>
 
-        <section class="mb-4 scroll-reveal">
-            <h2>Traslado y consolidación</h2>
+        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg">
+            <h2 class="text-2xl font-merriweather text-secondary mb-2">Traslado y consolidación</h2>
             <p>En 1980, la iglesia se trasladó a su ubicación actual bajo la cobertura de Santidad Pentecostal, con el
-                pastor Gilberth Gamboa al frente. A finales de 1981 se integraron Luis Alvarado y la hermana Flora
-                Sanabria.
-            </p>
+                pastor Gilberth Gamboa al frente.</p>
         </section>
 
-        <section class="mb-4 scroll-reveal">
-            <h2>Pastores a lo largo de los años</h2>
-            <p>A lo largo del tiempo, varios pastores han liderado la iglesia:</p>
-            <ul class="list-group list-group-flush mb-4">
-                <li class="list-group-item">Gilberth Gamboa</li>
-                <li class="list-group-item">Vinicio Vargas</li>
-                <li class="list-group-item">Alejandro Jiménez</li>
-                <li class="list-group-item">Carlos Alfaro</li>
-                <li class="list-group-item">Alberto Herrera</li>
-                <li class="list-group-item">Hernán Guzmán</li>
-                <li class="list-group-item">Melvin Mora</li>
-                <li class="list-group-item">Jorge Villalobos</li>
-                <li class="list-group-item">Leonel Mantamoros</li>
-                <li class="list-group-item">Ana Bermúdez</li>
-                <li class="list-group-item"><strong>Actualmente:</strong> Luis Diego Sánchez</li>
+        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg">
+            <h2 class="text-2xl font-merriweather text-secondary mb-4">Pastores a lo largo de los años</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Gilberth Gamboa</li>
+                <li>Vinicio Vargas</li>
+                <li>Alejandro Jiménez</li>
+                <li>Carlos Alfaro</li>
+                <li>Alberto Herrera</li>
+                <li>Hernán Guzmán</li>
+                <li>Melvin Mora</li>
+                <li>Jorge Villalobos</li>
+                <li>Leonel Mantamoros</li>
+                <li>Ana Bermúdez</li>
+                <li><strong>Actualmente:</strong> Luis Diego Sánchez</li>
             </ul>
         </section>
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const scrollElements = document.querySelectorAll('.scroll-reveal');
-
-            function checkInView() {
-                scrollElements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-
-                    if (elementTop < window.innerHeight * 0.8) {
-                        element.classList.add('active');
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', checkInView);
-            checkInView(); // Verificar elementos visibles al cargar
-        });
-    </script>
-
-    <footer class="text-center mt-4 py-3">
+    <footer class="text-center py-6 bg-primary text-white mt-10">
         <p>© 2024 Iglesia Santidad Pentecostal - Carrillos Bajo de Poás</p>
     </footer>
+    <!-- Script para el menú móvil -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('navigation-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            menu.classList.toggle('flex-col');
+            menu.classList.toggle('absolute');
+            menu.classList.toggle('top-20');
+            menu.classList.toggle('left-0');
+            menu.classList.toggle('right-0');
+            menu.classList.toggle('bg-black/50');
+            menu.classList.toggle('p-4');
+            menu.classList.toggle('shadow-md');
+        });
+    </script>
 </body>
 
 </html>
