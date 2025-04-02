@@ -76,6 +76,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="Css/Animations.css">
 
 </head>
 
@@ -97,7 +98,8 @@
 
           <!-- Menú de navegación -->
           <div class="hidden lg:flex lg:items-center lg:space-x-8" id="navigation-menu">
-            <a href="#" class="text-fourth font-montserrat font-medium hover:text-blue-700 transition-colors">Inicio</a>
+            <a href="#"
+              class="font-montserrat font-medium text-fourth transition-colors duration-300 border-b-2 border-fourth">Inicio</a>
             <a href="Html/Servicios.html"
               class="font-montserrat font-medium hover:text-primary transition-colors">Servicios</a>
             <a href="Html/Nosotros.html"
@@ -165,7 +167,8 @@
     <div class="container mx-auto px-4 py-16">
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Visión -->
-        <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 hover:-translate-y-1">
+        <div
+          class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 hover:-translate-y-1 tarjeta">
           <h2 class="text-3xl font-merriweather text-secondary mb-4">Visión</h2>
           <p class="text-gray-700 font-montserrat mb-4">
             Conectar en adoración al hombre con Dios, restaurándolo y llevándolo a ser un discípulo
@@ -175,7 +178,8 @@
         </div>
 
         <!-- Misión -->
-        <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 hover:-translate-y-1">
+        <div
+          class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 hover:-translate-y-1 tarjeta">
           <h2 class="text-3xl font-merriweather text-secondary mb-4">Misión</h2>
           <p class="text-gray-700 font-montserrat mb-4">
             Predicar el evangelio utilizando todas las formas y oportunidades dadas por el Espíritu
@@ -220,6 +224,16 @@
       menu.classList.toggle('bg-black/50');
       menu.classList.toggle('p-4');
       menu.classList.toggle('shadow-md');
+      menu.classList.toggle('space-y-4');
+      menu.classList.toggle('backdrop-blur-sm');
+
+      // Agregar animación de fade a los elementos del menú
+      const links = menu.getElementsByTagName('a');
+      Array.from(links).forEach((link, index) => {
+        link.classList.toggle('opacity-0');
+        link.classList.toggle('opacity-100');
+        link.style.transitionDelay = `${index * 100}ms`;
+      });
     });
   </script>
 </body>

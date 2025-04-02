@@ -2,23 +2,43 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Servicios | Iglesia Santidad Pentecostal | Carrillos Bajo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departamentos de la Iglesia de Carrillos Bajos | Santidad Pentecostal</title>
     <meta name="description"
-        content="Conoce los horarios de nuestros servicios y actividades semanales en la Iglesia Santidad Pentecostal de Carrillos Bajos." />
-    <meta property="og:title" content="Servicios | Iglesia Santidad Pentecostal | Carrillos Bajo de Poás" />
+        content="Conoce los departamentos de nuestra iglesia desde las personas que ves en la puerta hasta los liderez.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Departamentos | Iglesia Santidad Pentecostal | Carrillos Bajo de Poás">
     <meta property="og:description"
-        content="Descubre nuestros horarios de servicios y actividades semanales. ¡Te esperamos!" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="https://www.tudominio.com/servicios" />
-    <meta property="og:type" content="website" />
-    <link rel="canonical" href="https://www.tudominio.com/servicios" />
-    <link rel="icon" href="../img/Logo.svg" type="image/svg+xml" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="../Css/navbar.css" rel="stylesheet">
-    <link href="../Css/Nosotros.css" rel="stylesheet">
+        content="Conoce los departamentos de nuestra iglesia desde las personas que ves en la puerta hasta los liderez.">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="https://www.tudominio.com/historia">
+    <meta property="og:type" content="website">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.tudominio.com/historia">
+    <link rel="icon" href="../img/Logo.svg" type="image/svg+xml">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        merriweather: ['Merriweather', 'serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2d3e50',
+                        secondary: '#005f6b',
+                        accent: '#3498db',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -26,25 +46,33 @@
         rel="stylesheet">
 </head>
 
-<body>
-    <header>
-        <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
-            <div class="menu container-fluid">
-                <a class="navbar-brand" href="../index.html">
-                    <img src="../img/Logo letras blancas.svg" alt="Logo" width="150" height="150"
-                        class="d-inline-block align-text-top">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="../index.html">Inicio</a>
-                        <a class="nav-link " aria-current="page" href="Servicios.html">Servicios</a>
-                        <a class="nav-link active" href="Nosotros.html">Nosotros</a>
-                        <a class="nav-link" href="Historia.html">Historia</a>
+<body class="bg-gray-100 text-gray-900 font-montserrat">
+    <header class="bg-primary text-white shadow-md fixed top-0 left-0 w-full z-50">
+        <nav class="fixed top-0 left-0 w-full bg-primary text-white shadow-md z-50">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center h-20">
+                    <a href="../index.html" class="flex-shrink-0">
+                        <img src="../img/Logo letras blancas.svg" alt="Logo" class="h-16 w-auto">
+                    </a>
+
+                    <!-- Botón móvil -->
+                    <button class="lg:hidden focus:outline-none" type="button" id="mobile-menu-button">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Menú de navegación -->
+                    <div class="hidden lg:flex lg:items-center lg:space-x-8" id="navigation-menu">
+                        <a href="../index.html"
+                            class="font-montserrat font-medium hover:text-accent transition-colors duration-300">Inicio</a>
+                        <a href="Servicios.html"
+                            class="font-montserrat font-medium hover:text-accent transition-colors duration-300">Servicios</a>
+                        <a href="Nosotros.html"
+                            class="font-montserrat font-medium text-accent transition-colors duration-300 border-b-2 border-accent">Nosotros</a>
+                        <a href="Historia.html"
+                            class="font-montserrat font-medium hover:text-accent transition-colors duration-300">Historia</a>
                     </div>
                 </div>
             </div>
@@ -54,201 +82,204 @@
             crossorigin="anonymous"></script>
     </header>
 
-    <main class="container" style="padding-top: 170px;">
+    <main class="container mx-auto px-4 pt-32 pb-16">
 
-        <h1 class="text-center scroll-reveal">Nuestros Departamentos</h1>
-        <p class="text-center text-muted mb-5 scroll-reveal">Pues así como en un cuerpo tenemos muchos miembros, pero
+        <h1 class="text-4xl lg:text-5xl font-merriweather text-primary text-center mb-4 tracking-tight">Nuestros
+            Departamentos</h1>
+        <p class="text-center text-gray-600 mb-4 font-montserrat max-w-2xl mx-auto">Pues así como en un cuerpo tenemos
+            muchos miembros, pero
             no todos los miembros tienen la misma función, así nosotros, que somos muchos, somos un cuerpo en Cristo e
             individualmente miembros los unos de los otros.</p>
-        <p class="text-center text-muted mb-5 scroll-reveal"><strong>Romanos 12:4-5(NBLA).</strong></p>
+        <p
+            class="text-center bg-primary text-white rounded-full font-montserrat mb-16 font-montserrat max-w-2xl mx-auto">
+            <strong>Romanos
+                12:4-5(NBLA).</strong>
+        </p>
 
-        <div class="row ">
-
-            <article class="col-12 col-sm-12 col-md-6 col-lg-4 scroll-reveal">
-                <div class="service-card card">
-                    <header class="card-header text-center">
-                        <h2 class="service-title">Departamento Pastoral</h2>
-                    </header>
-                    <figure class="service-image">
-                        <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                            class="img-fluid">
-                    </figure>
-                    <section class="card-body text-center card_article ">
-                        <h3 class="leader-name"><strong>Líder :</strong>Luis Diego Sanchez</h3>
-                        <p class="service-description">Liderez del ministerio, las cuales buscan que todos los hermanos
-                            trabajemos en conjunto para lograr ganar almas para Cristo</p>
-                        <p class="service-activities">Queremos lograr esta misión guiando a los hermanos por un camino
-                            fundamentado en la Biblia y en Jesucristo</p>
-                    </section>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            <article
+                class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento Pastoral</h2>
+                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
+                        class="img-fluid">
+                    <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
+                        <strong>Líder :</strong>Luis Diego Sanchez
+                    </h3>
+                    <p class="text-gray-600">Somos los Líderes del ministerio, quienes buscamos que todos los hermanos
+                        trabajemos en conjunto para lograr ganar almas para Cristo.</p>
+                    <p class="text-gray-600">Queremos cumplir esta misión guiando a los hermanos por un camino
+                        fundamentado en la palabra y en Jesucristo.</p>
                 </div>
             </article>
-            <article class="col-12 col-sm-12 col-md-6 col-lg-4 scroll-reveal">
-                <div class="service-card card">
-                    <header class="card-header text-center">
-                        <h2 class="service-title">Departamento Musical</h2>
-                    </header>
-                    <figure class="service-image">
-                        <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                            class="img-fluid">
-                    </figure>
-                    <section class="card-body text-center card_article ">
-                        <h3 class="leader-name"><strong>Líder :</strong>Erick Sanchez</h3>
-                        <p class="service-description">Encargados de ministrar la presencia de Dios por medio de la
-                            alabanza y adoración de nuestro grupo musical.</p>
-                        <p class="service-activities">Buscamos lograr este cometido durante cada servicio y ensayo que
-                            dedicamos a la mejora y destreza tanto musical como espiritual.</p>
-                    </section>
+            <article
+                class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento Musical</h2>
+                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
+                        class="img-fluid">
+                    <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
+                        <strong>Líder :</strong>Erick Sanchez
+                    </h3>
+                    <p class="service-description">Encargados de guiar a la congregación a la presencia de Dios mediante
+                        la alabanza y adoración significativa de nuestro grupo musical.</p>
+                    <p class="service-activities">Buscamos lograr este cometido durante cada servicio y ensayo que
+                        dedicamos al crecimiento musical y espiritual.</p>
                 </div>
             </article>
-            <article class="col-12 col-sm-12 col-md-6 col-lg-4 scroll-reveal">
-                <div class="service-card card">
-                    <header class="card-header text-center">
-                        <h2 class="service-title">Departamento Danza</h2>
-                    </header>
-                    <figure class="service-image">
-                        <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                            class="img-fluid">
-                    </figure>
-                    <section class="card-body text-center card_article ">
-                        <h3 class="leader-name"><strong>Líder :</strong>Nuria</h3>
-                        <p class="service-description">Buscamos representar aquello que no se puede expresar en una
-                            canción o en palabras, aquello que solo el cuerpo y el arte pueden decir y darle gloria a
-                            Dios.</p>
-                        <p class="service-activities">Logramos nuestro cometido con disciplina, esfuerzo y ensayos para
-                            que cada danza muestre la grandeza de Dios.</p>
-                    </section>
+            <article
+                class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento Danza</h2>
+                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
+                        class="img-fluid">
+                    <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
+                        <strong>Líder :</strong>Nuria Alvarado
+                    </h3>
+                    <p class="service-description">Buscamos representar aquello que no se puede expresar en palabras o
+                        en una canción, aquello que solo el cuerpo y el arte pueden decir, para darle gloria a Dios.</p>
+                    <p class="service-activities">Expresamos nuestra gratitud mediante la práctica y la muestra del
+                        arte,
+                        utilizando una variedad de formas e instrumentos.</p>
                 </div>
             </article>
-            <article class="col-12 col-sm-12 col-md-6 col-lg-4 scroll-reveal">
-                <div class="service-card card">
-                    <header class="card-header text-center">
-                        <h2 class="service-title">Departamento Intercesión</h2>
-                    </header>
-                    <figure class="service-image">
-                        <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                            class="img-fluid">
-                    </figure>
-                    <section class="card-body text-center card_article ">
-                        <h3 class="leader-name"><strong>Líder :</strong>Hellen</h3>
-                        <p class="service-description">Buscamos en oración la presencia de Dios, su justicia y que nos
-                            entregue la sabiduría para actuar conforme a su voluntad</p>
-                        <p class="service-activities">Logramos nuestro objetivo mediante los periodos de oración
-                            dispuestos para ello o por medio de periodos que establecemos con anterioridad.</p>
-                    </section>
+            <article
+                class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento Intercesión</h2>
+                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
+                        class="img-fluid">
+                    <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
+                        <strong>Líder :</strong>Hellen Arias
+                    </h3>
+                    <p class="service-description">Buscamos en oración la presencia de Dios, su justicia, y pedimos
+                        sabiduría para actuar conforme a su voluntad</p>
+                    <p class="service-activities">Perseguimos nuestro objetivo mediante periodos de oración, ya sean
+                        previamente establecidos o espontáneos.</p>
                 </div>
             </article>
-            <article class="col-12 col-sm-12 col-md-6 col-lg-4 scroll-reveal">
-                <div class="service-card card">
-                    <header class="card-header text-center">
-                        <h2 class="service-title">Departamento escuela dominical</h2>
-                    </header>
-                    <figure class="service-image">
-                        <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                            class="img-fluid">
-                    </figure>
-                    <section class="card-body text-center card_article ">
-                        <h3 class="leader-name"><strong>Líder :</strong>Roxana Flores</h3>
-                        <p class="service-description">Buscamos guiar al niño en los caminos de Dios, para que al crecer
-                            reconozca a su Señor y Salvador.</p>
-                        <p class="service-activities">Cumplimos con esta gran tarea apoyados por cada uno de los
-                            maestros capacitados para la enseñanza de los niños de nuestra congregación.</p>
-                    </section>
+            <article
+                class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento escuela dominical</h2>
+                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
+                        class="img-fluid">
+                    <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
+                        <strong>Líder :</strong>Roxana Flores
+                    </h3>
+                    <p class="service-description">Buscamos guiar al niño en los caminos de Dios, para que al crecer
+                        reconozca a su Señor y Salvador.</p>
+                    <p class="service-activities">Cumplimos con esta gran tarea apoyados por cada uno de los
+                        maestros capacitados para la enseñanza de los niños de nuestra congregación.</p>
                 </div>
             </article>
-            <article class="col-12 col-sm-12 col-md-6 col-lg-4 scroll-reveal">
-                <div class="service-card card">
-                    <header class="card-header text-center">
-                        <h2 class="service-title">Departamento servidores</h2>
-                    </header>
-                    <figure class="service-image">
-                        <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                            class="img-fluid">
-                    </figure>
-                    <section class="card-body text-center card_article ">
-                        <h3 class="leader-name"><strong>Líder :</strong>Alberto</h3>
-                        <p class="service-description">Liderez del ministerio, las cuales buscan que todos los hermanos
-                            trabajemos en conjunto para lograr ganar almas para Cristo</p>
-                        <p class="service-activities">Queremos lograr esta misión guiando a los hermanos por un camino
-                            fundamentado en la Biblia y en Jesucristo</p>
-                    </section>
+            <article
+                class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento servidores</h2>
+                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
+                        class="img-fluid">
+                    <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
+                        <strong>Líder :</strong>Alberto Herrera
+                    </h3>
+                    <p class="service-description">Liderez del ministerio, las cuales buscan que todos los hermanos
+                        trabajemos en conjunto para lograr ganar almas para Cristo</p>
+                    <p class="service-activities">Queremos lograr esta misión guiando a los hermanos por un camino
+                        fundamentado en la Biblia y en Jesucristo</p>
                 </div>
             </article>
-            <article class="col-12 col-sm-12 col-md-6 col-lg-4 scroll-reveal">
-                <div class="service-card card">
-                    <header class="card-header text-center">
-                        <h2 class="service-title">Departamento juvenil</h2>
-                    </header>
-                    <figure class="service-image">
-                        <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                            class="img-fluid">
-                    </figure>
-                    <section class="card-body text-center card_article ">
-                        <h3 class="leader-name"><strong>Líder :</strong>xiomara </h3>
-                        <p class="service-description">Liderez del ministerio, las cuales buscan que todos los hermanos
-                            trabajemos en conjunto para lograr ganar almas para Cristo</p>
-                        <p class="service-activities">Queremos lograr esta misión guiando a los hermanos por un camino
-                            fundamentado en la Biblia y en Jesucristo</p>
-                    </section>
+            <article
+                class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento juvenil</h2>
+                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
+                        class="img-fluid">
+                    <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
+                        <strong>Líder :</strong>Xiomara Marchena
+                    </h3>
+                    <p class="service-description">Liderez del ministerio, las cuales buscan que todos los hermanos
+                        trabajemos en conjunto para lograr ganar almas para Cristo</p>
+                    <p class="service-activities">Queremos lograr esta misión guiando a los hermanos por un camino
+                        fundamentado en la Biblia y en Jesucristo</p>
                 </div>
             </article>
-            <article class="col-12 col-sm-12 col-md-6 col-lg-4 scroll-reveal">
-                <div class="service-card card">
-                    <header class="card-header text-center">
-                        <h2 class="service-title">Departamento de Discipulado</h2>
-                    </header>
-                    <figure class="service-image">
-                        <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                            class="img-fluid">
-                    </figure>
-                    <section class="card-body text-center card_article ">
-                        <h3 class="leader-name"><strong>Líder :</strong>Carlos Leon</h3>
-                        <p class="service-description">Liderez del ministerio, las cuales buscan que todos los hermanos
-                            trabajemos en conjunto para lograr ganar almas para Cristo</p>
-                        <p class="service-activities">Queremos lograr esta misión guiando a los hermanos por un camino
-                            fundamentado en la Biblia y en Jesucristo</p>
-                    </section>
+            <article
+                class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento de Discipulado</h2>
+                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
+                        class="img-fluid">
+                    <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
+                        <strong>Líder :</strong>Carlos Leon
+                    </h3>
+                    <p class="service-description">Liderez del ministerio, las cuales buscan que todos los hermanos
+                        trabajemos en conjunto para lograr ganar almas para Cristo</p>
+                    <p class="service-activities">Queremos lograr esta misión guiando a los hermanos por un camino
+                        fundamentado en la Biblia y en Jesucristo</p>
                 </div>
             </article>
-            <article class="col-12 col-sm-12 col-md-6 col-lg-4 scroll-reveal">
-                <div class="service-card card">
-                    <header class="card-header text-center">
-                        <h2 class="service-title">Departamento Femenil</h2>
-                    </header>
-                    <figure class="service-image">
-                        <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                            class="img-fluid">
-                    </figure>
-                    <section class="card-body text-center card_article ">
-                        <h3 class="leader-name"><strong>Líder :</strong>Hellen</h3>
-                        <p class="service-description">Liderez del ministerio, las cuales buscan que todos los hermanos
-                            trabajemos en conjunto para lograr ganar almas para Cristo</p>
-                        <p class="service-activities">Queremos lograr esta misión guiando a los hermanos por un camino
-                            fundamentado en la Biblia y en Jesucristo</p>
-                    </section>
+            <article
+                class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento Femenil</h2>
+                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
+                        class="img-fluid">
+                    <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
+                        <strong>Líder :</strong>Hellen Arias
+                    </h3>
+                    <p class="service-description">Liderez del ministerio, las cuales buscan que todos los hermanos
+                        trabajemos en conjunto para lograr ganar almas para Cristo</p>
+                    <p class="service-activities">Queremos lograr esta misión guiando a los hermanos por un camino
+                        fundamentado en la Biblia y en Jesucristo</p>
                 </div>
             </article>
-            <article class="col-12 col-sm-12 col-md-6 col-lg-4 scroll-reveal">
-                <div class="service-card card">
-                    <header class="card-header text-center">
-                        <h2 class="service-title">Departamento ayuda social</h2>
-                    </header>
-                    <figure class="service-image">
-                        <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                            class="img-fluid">
-                    </figure>
-                    <section class="card-body text-center card_article ">
-                        <h3 class="leader-name"><strong>Líder :</strong>Luis</h3>
-                        <p class="service-description">Liderez del ministerio, las cuales buscan que todos los hermanos
-                            trabajemos en conjunto para lograr ganar almas para Cristo</p>
-                        <p class="service-activities">Queremos lograr esta misión guiando a los hermanos por un camino
-                            fundamentado en la Biblia y en Jesucristo</p>
-                    </section>
+            <article
+                class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento ayuda social</h2>
+                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
+                        class="img-fluid">
+                    <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
+                        <strong>Líder :</strong>Luis Alvarado
+                    </h3>
+                    <p class="service-description">Liderez del ministerio, las cuales buscan que todos los hermanos
+                        trabajemos en conjunto para lograr ganar almas para Cristo</p>
+                    <p class="service-activities">Queremos lograr esta misión guiando a los hermanos por un camino
+                        fundamentado en la Biblia y en Jesucristo</p>
                 </div>
             </article>
         </div>
     </main>
-    <footer class="container text-center mt-4 py-3">
-        <p>© 2024 Iglesia Santidad Pentecostal - Carrillos Bajo de Poás</p>
+
+    <!-- Script para el menú móvil -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('navigation-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            menu.classList.toggle('flex-col');
+            menu.classList.toggle('absolute');
+            menu.classList.toggle('top-20');
+            menu.classList.toggle('left-0');
+            menu.classList.toggle('right-0');
+            menu.classList.toggle('bg-black/50');
+            menu.classList.toggle('p-4');
+            menu.classList.toggle('shadow-md');
+            menu.classList.toggle('space-y-4');
+            menu.classList.toggle('backdrop-blur-sm');
+
+            // Agregar animación de fade a los elementos del menú
+            const links = menu.getElementsByTagName('a');
+            Array.from(links).forEach((link, index) => {
+                link.classList.toggle('opacity-0');
+                link.classList.toggle('opacity-100');
+                link.style.transitionDelay = `${index * 100}ms`;
+            });
+        });
+    </script>
+
+    <footer class="bg-primary text-white py-6 mt-auto">
+        <p class="container mx-auto px-4 text-center">© 2024 Iglesia Santidad Pentecostal - Carrillos Bajo de Poás</p>
     </footer>
 </body>
 

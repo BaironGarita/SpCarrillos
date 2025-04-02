@@ -33,47 +33,55 @@
                     colors: {
                         primary: '#2d3e50',
                         secondary: '#005f6b',
-                        third: '#3498db',
-                        fourth: '#00b4cc',
+                        accent: '#3498db',
                     }
                 }
             }
         }
     </script>
+    <link rel="stylesheet" href="../css/Animations.css">
 </head>
 
-<body class="bg-gray-100 text-gray-900 font-montserrat">
-    <header class="bg-primary text-white shadow-md fixed top-0 left-0 w-full z-50">
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-primary text-white shadow-md fixed top-0 left-0 w-full z-50 font-montserrat">
         <nav class="fixed top-0 left-0 w-full bg-primary text-white shadow-md z-50">
             <div class="container mx-auto px-4">
                 <div class="flex justify-between items-center h-20">
                     <a href="../index.html" class="flex-shrink-0">
                         <img src="../img/Logo letras blancas.svg" alt="Logo" class="h-16 w-auto">
                     </a>
+
                     <!-- Botón móvil -->
-                    <button class="lg:hidden focus:outline-none " type="button" id="mobile-menu-button">
+                    <button class="lg:hidden focus:outline-none" type="button" id="mobile-menu-button">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
+
                     <!-- Menú de navegación -->
                     <div class="hidden lg:flex lg:items-center lg:space-x-8" id="navigation-menu">
-                        <a href="../index.html" class="font-montserrat font-medium hover:text-third">Inicio</a>
-                        <a href="Servicios.html" class="font-montserrat font-mediumhover:text-third">Servicios</a>
-                        <a href="Nosotros.html" class="font-montserrat font-medium hover:text-third">Nosotros</a>
-                        <a href="Historia.html" class=" font-montserrat font-bold text-third">Historia</a>
+                        <a href="../index.html"
+                            class="font-montserrat font-medium hover:text-accent transition-colors duration-300">Inicio</a>
+                        <a href="Servicios.html"
+                            class="font-montserrat font-medium hover:text-accent transition-colors duration-300">Servicios</a>
+                        <a href="Nosotros.html"
+                            class="font-montserrat font-medium hover:text-accent transition-colors duration-300">Nosotros</a>
+                        <a href="Historia.html"
+                            class="font-montserrat font-medium text-accent transition-colors duration-300 border-b-2 border-accent">Historia</a>
                     </div>
-
                 </div>
             </div>
         </nav>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
     </header>
 
-    <main class="container mx-auto mt-24 px-6">
+    <main class="container mx-auto px-4 pt-32 pb-16">
         <h1 class="text-4xl font-merriweather text-primary text-center mb-6">Historia de la Iglesia de Carrillos Bajo
         </h1>
-        <p class="text-center text-gray-600 mb-8"><strong>Fecha de Actualización:</strong> Julio 5, 2024</p>
+        <p class="text-center text-gray-600 mb-20"><strong>Fecha de Actualización:</strong> Julio 5, 2024</p>
 
         <section class="mb-8 bg-white shadow-lg p-6 rounded-lg">
             <h2 class="text-2xl font-merriweather text-secondary mb-2">Fundación y primeros años</h2>
@@ -81,19 +89,19 @@
                 evangélica nacional, con el Pastor José Arroyo como líder inicial.</p>
         </section>
 
-        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg">
+        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta">
             <h2 class="text-2xl font-merriweather text-secondary mb-2">Primeros miembros</h2>
             <p>Algunas de las primeras personas que formaron parte de la iglesia fueron: Marielos Hernández, Solanyi
                 Díaz, Miguel Oviedo, Leonel Sánchez, entre otros.</p>
         </section>
 
-        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg">
+        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta">
             <h2 class="text-2xl font-merriweather text-secondary mb-2">Traslado y consolidación</h2>
             <p>En 1980, la iglesia se trasladó a su ubicación actual bajo la cobertura de Santidad Pentecostal, con el
                 pastor Gilberth Gamboa al frente.</p>
         </section>
 
-        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg">
+        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta">
             <h2 class="text-2xl font-merriweather text-secondary mb-4">Pastores a lo largo de los años</h2>
             <ul class="list-disc list-inside space-y-2">
                 <li>Gilberth Gamboa</li>
@@ -111,8 +119,8 @@
         </section>
     </main>
 
-    <footer class="text-center py-6 bg-primary text-white mt-10">
-        <p>© 2024 Iglesia Santidad Pentecostal - Carrillos Bajo de Poás</p>
+    <footer class="bg-primary text-white py-6 mt-auto">
+        <p class="container mx-auto px-4 text-center">© 2024 Iglesia Santidad Pentecostal - Carrillos Bajo de Poás</p>
     </footer>
     <!-- Script para el menú móvil -->
     <script>
@@ -128,6 +136,16 @@
             menu.classList.toggle('bg-black/50');
             menu.classList.toggle('p-4');
             menu.classList.toggle('shadow-md');
+            menu.classList.toggle('space-y-4');
+            menu.classList.toggle('backdrop-blur-sm');
+
+            // Agregar animación de fade a los elementos del menú
+            const links = menu.getElementsByTagName('a');
+            Array.from(links).forEach((link, index) => {
+                link.classList.toggle('opacity-0');
+                link.classList.toggle('opacity-100');
+                link.style.transitionDelay = `${index * 100}ms`;
+            });
         });
     </script>
 </body>
