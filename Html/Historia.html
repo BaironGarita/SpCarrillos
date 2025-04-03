@@ -83,25 +83,25 @@
         </h1>
         <p class="text-center text-gray-600 mb-20"><strong>Fecha de Actualización:</strong> Julio 5, 2024</p>
 
-        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta">
+        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta scroll">
             <h2 class="text-2xl font-merriweather text-secondary mb-2">Fundación y primeros años</h2>
             <p>La iglesia de Carrillos Bajo dio inicio en el año 1979, en una carpa, bajo la cobertura de la iglesia
                 evangélica nacional, con el Pastor José Arroyo como líder inicial.</p>
         </section>
 
-        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta">
+        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta scroll">
             <h2 class="text-2xl font-merriweather text-secondary mb-2">Primeros miembros</h2>
             <p>Algunas de las primeras personas que formaron parte de la iglesia fueron: Marielos Hernández, Solanyi
                 Díaz, Miguel Oviedo, Leonel Sánchez, entre otros.</p>
         </section>
 
-        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta">
+        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta scroll">
             <h2 class="text-2xl font-merriweather text-secondary mb-2">Traslado y consolidación</h2>
             <p>En 1980, la iglesia se trasladó a su ubicación actual bajo la cobertura de Santidad Pentecostal, con el
                 pastor Gilberth Gamboa al frente.</p>
         </section>
 
-        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta">
+        <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta scroll">
             <h2 class="text-2xl font-merriweather text-secondary mb-4">Pastores a lo largo de los años</h2>
             <ul class="list-disc list-inside space-y-2">
                 <li>Gilberth Gamboa</li>
@@ -146,6 +146,28 @@
                 link.classList.toggle('opacity-100');
                 link.style.transitionDelay = `${index * 100}ms`;
             });
+        });
+    </script>
+
+    <!-- Script para animaciones de scroll -->
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollElements = document.querySelectorAll('.scroll');
+            scrollElements.forEach(el => observer.observe(el));
         });
     </script>
 </body>
