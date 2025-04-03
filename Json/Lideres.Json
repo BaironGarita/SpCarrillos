@@ -1,0 +1,29 @@
+{
+    "lideres": [
+      {
+        "nombre_area": "Ministerio de Alabanza",
+        "nombre_lider": "Juan Pérez",
+        "telefono": "+52 123 456 7890"
+      },
+      {
+        "nombre_area": "Ministerio de Jóvenes",
+        "nombre_lider": "María González",
+        "telefono": "+52 234 567 8901"
+      },
+      {
+        "nombre_area": "Ministerio de Niños",
+        "nombre_lider": "Roberto Sánchez",
+        "telefono": "+52 345 678 9012"
+      },
+      {
+        "nombre_area": "Ministerio de Oración",
+        "nombre_lider": "Ana Rodríguez",
+        "telefono": "+52 456 789 0123"
+      },
+      {
+        "nombre_area": "Ministerio de Misiones",
+        "nombre_lider": "Carlos Martínez",
+        "telefono": "+52 567 890 1234"
+      }
+    ]
+  }
