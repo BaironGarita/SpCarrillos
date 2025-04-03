@@ -1,28 +1,53 @@
 {
     "lideres": [
       {
-        "nombre_area": "Ministerio de Alabanza",
-        "nombre_lider": "Juan Pérez",
+        "nombre_area": "Departamento Pastoral",
+        "nombre_lider": "Luis Diego Sanchez",
         "telefono": "+52 123 456 7890"
       },
       {
-        "nombre_area": "Ministerio de Jóvenes",
-        "nombre_lider": "María González",
+        "nombre_area": "Departamento Musical",
+        "nombre_lider": "Erick Sanchez",
         "telefono": "+52 234 567 8901"
       },
       {
-        "nombre_area": "Ministerio de Niños",
-        "nombre_lider": "Roberto Sánchez",
+        "nombre_area": "Departamento Danza",
+        "nombre_lider": "Nuria Alvarado",
         "telefono": "+52 345 678 9012"
       },
       {
-        "nombre_area": "Ministerio de Oración",
-        "nombre_lider": "Ana Rodríguez",
+        "nombre_area": "Departamento Intercesión",
+        "nombre_lider": "Hellen Arias",
         "telefono": "+52 456 789 0123"
       },
       {
-        "nombre_area": "Ministerio de Misiones",
-        "nombre_lider": "Carlos Martínez",
+        "nombre_area": "Departamento escuela dominical",
+        "nombre_lider": "Roxana Flores",
+        "telefono": "+52 567 890 1234"
+      },
+      {
+        "nombre_area": "Departamento servidores",
+        "nombre_lider": "Alberto Herrera",
+        "telefono": "+52 123 456 7890"
+      },
+      {
+        "nombre_area": "Departamento juvenil",
+        "nombre_lider": "Xiomara Marchena, James Suarez, Cesar Bolaños",
+        "telefono": "+52 234 567 8901"
+      },
+      {
+        "nombre_area": "Departamento de Discipulado",
+        "nombre_lider": "Carlos Leon",
+        "telefono": "+52 345 678 9012"
+      },
+      {
+        "nombre_area": "Departamento Femenil",
+        "nombre_lider": "Hellen Arias",
+        "telefono": "+52 456 789 0123"
+      },
+      {
+        "nombre_area": "Departamento ayuda social",
+        "nombre_lider": "Roxana Flores",
         "telefono": "+52 567 890 1234"
       }
     ]
