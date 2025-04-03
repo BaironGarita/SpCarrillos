@@ -12,4 +12,36 @@
   animation: appear linear;
   animation-timeline: view();
   animation-range: entry 45% cover 40%;
+  transition-duration: 500ms ease-in-out;
+}
+
+.tarjeta:hover {
+  scale: 1.05;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.peticion {
+  transition-duration: 500ms;
+}
+
+.peticion:hover {
+  scale: 1.025;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.boton {
+  transition-duration: 500ms;
+}
+.boton:hover {
+  scale: 1.125;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.icono {
+  border-radius: 50%;
+  transition-duration: 500ms;
+}
+.icono:hover {
+  scale: 1.5;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
 }

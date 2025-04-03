@@ -85,7 +85,7 @@
     <nav class="fixed top-0 left-0 w-full bg-primary text-white shadow-md z-50 ">
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-20">
-          <a href="#" class="flex-shrink-0">
+          <a href="#" class="flex-shrink-0 icono">
             <img src="img/Logo letras blancas.svg" alt="Logo" class="h-16 w-auto">
           </a>
 
@@ -101,11 +101,11 @@
             <a href="#"
               class="font-montserrat font-medium text-fourth transition-colors duration-300 border-b-2 border-fourth">Inicio</a>
             <a href="Html/Servicios.html"
-              class="font-montserrat font-medium hover:text-primary transition-colors">Servicios</a>
+              class="font-montserrat font-medium hover:text-fourth transition-colors">Servicios</a>
             <a href="Html/Nosotros.html"
-              class="font-montserrat font-medium hover:text-primary transition-colors">Nosotros</a>
+              class="font-montserrat font-medium hover:text-fourth transition-colors">Nosotros</a>
             <a href="Html/Historia.html"
-              class="font-montserrat font-medium hover:text-primary transition-colors">Historia</a>
+              class="font-montserrat font-medium hover:text-fourth transition-colors">Historia</a>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@
             <div class="text-center">
               <h1 class="text-5xl md:text-6xl text-white font-merriweather mb-8">Iglesia Carrillos Bajo de Poás</h1>
               <a href="Html/Peticiones.Html"
-                class="inline-block bg-third text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-montserrat">
+                class="inline-block bg-third text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-montserrat peticion">
                 Tienes Peticiones de Oración?
               </a>
             </div>
@@ -140,7 +140,7 @@
             <div class="text-center">
               <h1 class="text-5xl md:text-6xl text-white font-merriweather mb-8">Iglesia Carrillos Bajo de Poás</h1>
               <a href="Html/Peticiones.Html"
-                class="inline-block bg-third text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-montserrat">
+                class="inline-block bg-third text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-montserrat peticion">
                 Tienes Peticiones de Oración?
               </a>
             </div>
@@ -150,13 +150,13 @@
 
       <!-- Controles del carousel -->
       <button @click="activeSlide = activeSlide === 0 ? 1 : 0"
-        class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white">
+        class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white boton">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
       </button>
       <button @click="activeSlide = activeSlide === 0 ? 1 : 0"
-        class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white">
+        class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white boton">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
