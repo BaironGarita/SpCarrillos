@@ -1,28 +1,35 @@
 @keyframes appear {
-  from {
+  0% {
     opacity: 0;
-    scale: 0.025;
+    transform: scale(0.025);
   }
-  to {
+  100% {
     opacity: 1;
-    scale: 1 1;
+    transform: scale(1);
   }
 }
 
 .scroll {
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 45% cover 40%;
+  opacity: 0;
+  transform: scale(0.025);
+  animation: appear 1s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.scroll.visible {
+  animation-play-state: running;
 }
 
 .tarjeta {
   transition-duration: 500ms;
-  transition-timing-function: ease-in;
+  transition-delay: 5ms;
+  transition-timing-function: cubic-bezier(0.71, 0.04, 0.28, 1.27);
 }
 
 .tarjeta:hover {
   scale: 1.05;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+  transition-duration: 1s;
 }
 
 .peticion {

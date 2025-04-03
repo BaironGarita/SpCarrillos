@@ -123,7 +123,7 @@
             <div class="text-center">
               <h1 class="text-5xl md:text-6xl text-white font-merriweather mb-8">Iglesia Carrillos Bajo de Poás</h1>
               <a href="Html/Peticiones.Html"
-                class="inline-block bg-third text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-montserrat peticion">
+                class="inline-block bg-third text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-montserrat">
                 Tienes Peticiones de Oración?
               </a>
             </div>
@@ -140,7 +140,7 @@
             <div class="text-center">
               <h1 class="text-5xl md:text-6xl text-white font-merriweather mb-8">Iglesia Carrillos Bajo de Poás</h1>
               <a href="Html/Peticiones.Html"
-                class="inline-block bg-third text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-montserrat peticion">
+                class="inline-block bg-third text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-montserrat">
                 Tienes Peticiones de Oración?
               </a>
             </div>
@@ -167,7 +167,7 @@
     <div class="container mx-auto px-4 py-16">
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Visión -->
-        <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta scroll">
+        <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta srcoll">
           <h2 class="text-3xl font-merriweather text-secondary mb-4">Visión</h2>
           <p class="text-gray-700 font-montserrat mb-4">
             Conectar en adoración al hombre con Dios, restaurándolo y llevándolo a ser un discípulo
@@ -190,7 +190,7 @@
 
     <!-- Mapa -->
     <div class="container mx-auto px-4 py-16">
-      <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta">
+      <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta ">
         <h2 class="text-3xl font-merriweather text-secondary mb-4">Ubicación</h2>
         <div class="w-full h-[450px] relative rounded-lg overflow-hidden">
           <iframe class="w-full h-full absolute top-0 left-0"
@@ -207,6 +207,28 @@
 
   <!-- Alpine.js para el carousel y la interactividad -->
   <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Script para animaciones de scroll -->
+  <script>
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollElements = document.querySelectorAll('.scroll');
+      scrollElements.forEach(el => observer.observe(el));
+    });
+  </script>
 
   <!-- Script para el menú móvil -->
   <script>
