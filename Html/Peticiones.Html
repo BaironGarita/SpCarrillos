@@ -80,16 +80,28 @@
         </nav>
     </header>
     <main class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="flex flex-col items-center justify-center h-screen bg-cover bg-center"
-            style="background-image: url('img/Background.jpg');">
-            <div class="bg-black/50 p-6 rounded-lg shadow-lg text-center">
-                <h1 class="text-4xl font-bold text-white mb-4">Bienvenido a la Iglesia Santidad Pentecostal</h1>
-                <p class="text-lg text-white mb-4">Un lugar de adoración y comunidad cristiana.</p>
-                <a href="Html/Servicios.html"
-                    class="bg-secondary text-white px-4 py-2 rounded hover:bg-third transition-colors">Conoce
-                    nuestros servicios</a>
-            </div>
-        </div>
+        <div class="container mx-auto mt-24 p-4 bg-white shadow-md rounded-lg">
+            <h1 class="text-3xl font-bold mb-4">Peticiones de Oración</h1>
+            <form action="submit_prayer_request.php" method="POST" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Nombre:</label>
+                    <input type="text" id="name" name="name" required
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
+                </div>
+                <div>
+                    <label for="numer" class="block text-sm font-medium text-gray-700">Numero de Telefono:</label>
+                    <input type="number" id="email" name="email" required
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
+                </div>
+                <div>
+                    <label for="request" class="block text-sm font-medium text-gray-700">Petición:</label>
+                    <textarea id="request" name="request" rows="4" required
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-secondary text-white py-2 px-4 rounded-md hover:bg-third transition-colors">Enviar
+                    Petición</button>
+            </form>
     </main>
 
     <!-- Script para el menú móvil -->
