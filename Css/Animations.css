@@ -8,11 +8,16 @@
     scale: 1 1;
   }
 }
-.tarjeta {
+
+.scroll {
   animation: appear linear;
   animation-timeline: view();
   animation-range: entry 45% cover 40%;
-  transition-duration: 500ms ease-in-out;
+}
+
+.tarjeta {
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
 }
 
 .tarjeta:hover {
