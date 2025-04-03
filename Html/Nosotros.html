@@ -39,6 +39,7 @@
             }
         }
     </script>
+    <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -99,143 +100,157 @@
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             <article class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 tarjeta scroll">
-                <div class="text-center mb-6">
-                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento Pastoral</h2>
-                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                        class="img-fluid">
+                <div class="text-center mb-6" x-data="{mostrar: false}">
+                    <button class="text-2xl font-merriweather text-primary mb-2 " x-on:click="mostrar = !mostrar">
+                        Departamento Pastoral</button>
                     <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
                         <strong>Líder :</strong>Luis Diego Sanchez
                     </h3>
-                    <p class="text-gray-600">Somos los Líderes del ministerio, quienes buscamos que todos los hermanos
-                        trabajemos en conjunto para lograr ganar almas para Cristo.</p>
-                    <p class="text-gray-600">Queremos cumplir esta misión guiando a los hermanos por un camino
+                    <p class="text-gray-600 textos" x-show="mostrar">Somos los Líderes del ministerio, quienes buscamos
+                        que
+                        todos los hermanos
+                        trabajemos en conjunt o para lograr ganar almas para Cristo.</p>
+                    <p class="text-gray-600 textos" x-show="mostrar">Queremos cumplir esta misión guiando a los hermanos
+                        por un
+                        camino
                         fundamentado en la palabra y en Jesucristo.</p>
                 </div>
             </article>
             <article class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 tarjeta scroll">
-                <div class="text-center mb-6">
-                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento Musical</h2>
-                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                        class="img-fluid">
+                <div class="text-center mb-6" x-data="{mostrar: false}">
+                    <button class="text-2xl font-merriweather text-primary mb-2"
+                        x-on:click="mostrar = !mostrar">Departamento Musical</button>
                     <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
                         <strong>Líder :</strong>Erick Sanchez
                     </h3>
-                    <p class="service-description">Encargados de guiar a la congregación a la presencia de Dios mediante
+                    <p class="text-gray-600 textos" x-show="mostrar">Encargados de guiar a la congregación a la
+                        presencia de Dios
+                        mediante
                         la alabanza y adoración significativa de nuestro grupo musical.</p>
-                    <p class="service-activities">Buscamos lograr este cometido durante cada servicio y ensayo que
+                    <p class="text-gray-600 textos" x-show="mostrar">Buscamos lograr este cometido durante cada
+                        servicio y ensayo
+                        que
                         dedicamos al crecimiento musical y espiritual.</p>
                 </div>
             </article>
             <article class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 tarjeta scroll">
-                <div class="text-center mb-6">
-                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento Danza</h2>
-                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                        class="img-fluid">
+                <div class="text-center mb-6" x-data="{mostrar: false}">
+                    <button class="text-2xl font-merriweather text-primary mb-2"
+                        x-on:click="mostrar = !mostrar">Departamento Danza</button>
                     <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
                         <strong>Líder :</strong>Nuria Alvarado
                     </h3>
-                    <p class="service-description">Buscamos representar aquello que no se puede expresar en palabras o
+                    <p class="text-gray-600 textos" x-show="mostrar">Buscamos representar aquello que no se puede
+                        expresar en palabras o
                         en una canción, aquello que solo el cuerpo y el arte pueden decir, para darle gloria a Dios.</p>
-                    <p class="service-activities">Expresamos nuestra gratitud mediante la práctica y la muestra del
+                    <p class="text-gray-600 textos" x-show="mostrar">Expresamos nuestra gratitud mediante la práctica y
+                        la muestra del
                         arte,
                         utilizando una variedad de formas e instrumentos.</p>
                 </div>
             </article>
             <article class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 tarjeta scroll">
-                <div class="text-center mb-6">
-                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento Intercesión</h2>
-                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                        class="img-fluid">
+                <div class="text-center mb-6" x-data="{mostrar: false}">
+                    <button class="text-2xl font-merriweather text-primary mb-2" x-on:click="mostrar = !mostrar">
+                        Departamento Intercesión</button>
                     <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
                         <strong>Líder :</strong>Hellen Arias
                     </h3>
-                    <p class="service-description">Buscamos en oración la presencia de Dios, su justicia, y pedimos
+                    <p class="text-gray-600 textos" x-show="mostrar">Buscamos en oración la presencia de Dios, su
+                        justicia, y pedimos
                         sabiduría para actuar conforme a su voluntad</p>
-                    <p class="service-activities">Perseguimos nuestro objetivo mediante periodos de oración, ya sean
+                    <p class="text-gray-600 textos" x-show="mostrar">Perseguimos nuestro objetivo mediante periodos de
+                        oración, ya sean
                         previamente establecidos o espontáneos.</p>
                 </div>
             </article>
             <article class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 tarjeta scroll">
-                <div class="text-center mb-6">
-                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento escuela dominical</h2>
-                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                        class="img-fluid">
+                <div class="text-center mb-6" x-data="{mostrar: false}">
+                    <button class="text-2xl font-merriweather text-primary mb-2"
+                        x-on:click="mostrar = !mostrar">Departamento escuela dominical</button>
                     <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
                         <strong>Líder :</strong>Roxana Flores
                     </h3>
-                    <p class="service-description">Buscamos guiar al niño en los caminos de Dios, para que al crecer
+                    <p class="text-gray-600 textos" x-show="mostrar">Buscamos guiar al niño en los caminos de Dios, para
+                        que al crecer
                         reconozca a su Señor y Salvador.</p>
-                    <p class="service-activities">Cumplimos con esta gran tarea apoyados por cada uno de los
+                    <p class="text-gray-600 textos" x-show="mostrar">Cumplimos con esta gran tarea apoyados por cada uno
+                        de los
                         maestros capacitados para la enseñanza de los niños de nuestra congregación.</p>
                 </div>
             </article>
             <article class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 tarjeta scroll">
-                <div class="text-center mb-6">
-                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento servidores</h2>
-                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                        class="img-fluid">
+                <div class="text-center mb-6" x-data="{mostrar: false}">
+                    <button class="text-2xl font-merriweather text-primary mb-2"
+                        x-on:click="mostrar = !mostrar">Departamento servidores</button>
                     <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
                         <strong>Líder :</strong>Alberto Herrera
                     </h3>
-                    <p class="service-description">Nos encargamos de que disfrutes del servicio dominical y de cada
+                    <p class="text-gray-600 textos" x-show="mostrar">Nos encargamos de que disfrutes del servicio
+                        dominical y de cada
                         actividad, sin preocupaciones adicionales.</p>
-                    <p class="service-activities">Logramos este cometido gracias a cada uno de nuestros colaboradores,
+                    <p class="text-gray-600 textos" x-show="mostrar">Logramos este cometido gracias a cada uno de
+                        nuestros colaboradores,
                         quienes se dedican a ayudar y servir a los hermanos de la congregación.</p>
                 </div>
             </article>
             <article class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 tarjeta scroll">
-                <div class="text-center mb-6">
-                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento juvenil</h2>
-                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                        class="img-fluid">
+                <div class="text-center mb-6" x-data="{mostrar: false}">
+                    <button class="text-2xl font-merriweather text-primary mb-2"
+                        x-on:click="mostrar = !mostrar">Departamento juvenil</button>
                     <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
                         <strong>Líder :</strong>Xiomara Marchena
                     </h3>
-                    <p class="service-description">Nos dedicamos a guiar a los jóvenes, mostrándoles un camino diferente
+                    <p class="text-gray-600 textos" x-show="mostrar">Nos dedicamos a guiar a los jóvenes, mostrándoles
+                        un camino diferente
                         a las tendencias actuales.</p>
-                    <p class="service-activities">Logramos esto enseñando la Palabra y buscando respuestas a las dudas
+                    <p class="text-gray-600 textos" x-show="mostrar">Logramos esto enseñando la Palabra y buscando
+                        respuestas a las dudas
                         que surgen en nuestros jóvenes.</p>
                 </div>
             </article>
             <article class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 tarjeta scroll">
-                <div class="text-center mb-6">
-                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento de Discipulado</h2>
-                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                        class="img-fluid">
+                <div class="text-center mb-6" x-data="{mostrar: false}">
+                    <button class="text-2xl font-merriweather text-primary mb-2" x-on:click="mostrar = !mostrar">
+                        Departamento de Discipulado</button>
                     <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
                         <strong>Líder :</strong>Carlos Leon
                     </h3>
-                    <p class="service-description">Instruimos a los nuevos creyentes en el camino para ser una nueva
+                    <p class="text-gray-600 textos" x-show="mostrar">Instruimos a los nuevos creyentes en el
+                        camino para ser una nueva
                         criatura en Cristo.</p>
-                    <p class="service-activities">Logramos este cometido mediante clases virtuales ya establecidas y el
+                    <p class="text-gray-600 textos" x-show="mostrar">Logramos este cometido mediante clases virtuales ya
+                        establecidas y el
                         uso de diversos recursos, como folletos o la guía de personas maduras en la fe.</p>
                 </div>
             </article>
             <article class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 tarjeta scroll">
-                <div class="text-center mb-6">
-                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento Femenil</h2>
-                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                        class="img-fluid">
+                <div class="text-center mb-6" x-data="{mostrar: false}">
+                    <button class="text-2xl font-merriweather text-primary mb-2"
+                        x-on:click="mostrar = !mostrar">Departamento Femenil</button>
                     <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
                         <strong>Líder :</strong>Hellen Arias
                     </h3>
-                    <p class="service-description">Mujeres que trabajan por mujeres, apoyándose mutuamente para crecer
+                    <p class="text-gray-600 textos" x-show="mostrar">Mujeres que trabajan por mujeres,
+                        apoyándose mutuamente para crecer
                         en todas las áreas de sus vidas.</p>
-                    <p class="service-activities">Esto se logra a través de reuniones, llamadas o cualquier actividad
+                    <p class="text-gray-600 textos" x-show="mostrar">Esto se logra a través de reuniones, llamadas o
+                        cualquier actividad
                         que fomente el compañerismo entre las hermanas.</p>
                 </div>
             </article>
             <article class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 tarjeta scroll">
-                <div class="text-center mb-6">
-                    <h2 class="text-2xl font-merriweather text-primary mb-2">Departamento ayuda social</h2>
-                    <img src="ruta/a/la/imagen-servicio-dominical.jpg" alt="Imagen del Servicio Dominical"
-                        class="img-fluid">
+                <div class="text-center mb-6" x-data="{mostrar: false}">
+                    <button class="text-2xl font-merriweather text-primary mb-2"
+                        x-on:click="mostrar = !mostrar">Departamento ayuda social</button>
                     <h3 class="bg-primary text-white rounded-full px-4 py-1 inline-block mb-2 font-montserrat">
                         <strong>Líder :</strong>Luis Alvarado
                     </h3>
-                    <p class="service-description">Así como ayudamos al alma, también procuramos asistir a quienes
+                    <p class="text-gray-600 textos" x-show="mostrar">Así como ayudamos al alma, también procuramos
+                        asistir a quienes
                         atraviesan necesidades personales.</p>
-                    <p class="service-activities">Este cometido se logra mediante colectas de víveres de los hermanos de
+                    <p class="text-gray-600 textos" x-show="mostrar">Este cometido se logra mediante colectas de víveres
+                        de los hermanos de
                         la iglesia, quienes son una bendición para las personas necesitadas.</p>
                 </div>
             </article>
