@@ -39,7 +39,11 @@
             }
         }
     </script>
+    <!-- Alpine.js -->
     <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -117,9 +121,9 @@
         }" x-init="fetchData()">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                 <template x-for="lider in lideres" :key="lider.nombre_area">
-                    <article
-                        class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 tarjeta scroll"
-                        x-data="{mostrar: false}">
+                    <article class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 tarjeta "
+                        x-data="{mostrar: false}" data-aos="zoom-in" data-aos-duration="1000"
+                        data-aos-easing="ease-out">
                         <div class="text-center mb-6">
                             <button
                                 class="text-2xl font-merriweather text-primary mb-2 hover:text-primary-dark transition-colors"
@@ -137,7 +141,8 @@
                                 <p class="text-gray-600 textos" x-text="lider.second_text"></p>
                                 </p>
                                 <div class="mt-4">
-                                    <a :href="'https://wa.me/' + lider.telefono.replace(/\s+/g, '') + '?text=Bendiciones%20estoy%20enteredo%20que%20eres%20el%20lider%20de%20el%20 + lider.nombre_area"
+                                    <a :href="'https://wa.me/' + lider.telefono.replace(/\s+/g, '') + '?text=Bendiciones%20estoy%20enterado%20que%20eres%20el%20lider%20de%20' + encodeURIComponent(lider.nombre_area)"
+                                        target="_blank"
                                         class="bg-secondary text-white px-4 py-2 rounded-full hover:bg-secondary-dark transition-colors">
                                         Contactar al Lider
                                     </a>
@@ -199,6 +204,13 @@
             scrollElements.forEach(el => observer.observe(el));
         });
     </script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
     <footer class="bg-primary text-white py-6 mt-auto">
         <p class="container mx-auto px-4 text-center">© 2024 Iglesia Santidad Pentecostal - Carrillos Bajo de Poás</p>
     </footer>

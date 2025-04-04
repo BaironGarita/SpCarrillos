@@ -38,6 +38,9 @@
       }
     }
   </script>
+  <!-- Scroll Animation CDN -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
   <script type="application/ld+json">
     {
@@ -167,7 +170,8 @@
     <div class="container mx-auto px-4 py-16">
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Visión -->
-        <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta srcoll">
+        <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta"
+          data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
           <h2 class="text-3xl font-merriweather text-secondary mb-4">Visión</h2>
           <p class="text-gray-700 font-montserrat mb-4">
             Conectar en adoración al hombre con Dios, restaurándolo y llevándolo a ser un discípulo
@@ -177,7 +181,8 @@
         </div>
 
         <!-- Misión -->
-        <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta scroll">
+        <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta"
+          data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
           <h2 class="text-3xl font-merriweather text-secondary mb-4">Misión</h2>
           <p class="text-gray-700 font-montserrat mb-4">
             Predicar el evangelio utilizando todas las formas y oportunidades dadas por el Espíritu
@@ -190,7 +195,8 @@
 
     <!-- Mapa -->
     <div class="container mx-auto px-4 py-16">
-      <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta scroll">
+      <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta"
+        data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
         <h2 class="text-3xl font-merriweather text-secondary mb-4">Ubicación</h2>
         <div class="w-full h-[450px] relative rounded-lg overflow-hidden">
           <iframe class="w-full h-full absolute top-0 left-0"
@@ -201,6 +207,16 @@
         <p class="text-gray-700 font-montserrat mt-4">
           100 metros norte del minisúper Don José, Carrillos Bajo, Poás
         </p>
+        <a href="https://maps.app.goo.gl/5rWeqfVQ5MQxuBi97" target="_blank"
+          class="inline-flex items-center px-4 py-2 bg-secondary text-white rounded hover:bg-fourth transition-colors duration-300">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          Cómo llegar
+        </a>
       </div>
     </div>
   </main>
@@ -256,6 +272,11 @@
       });
     });
   </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
 </body>
 
 </html>
