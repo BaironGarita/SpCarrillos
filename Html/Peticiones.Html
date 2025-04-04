@@ -38,6 +38,14 @@
             }
         }
     </script>
+
+    <!-- DaisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!--Alpine.js-->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -80,51 +88,68 @@
         </nav>
     </header>
     <main class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container mx-auto mt-24 p-4 bg-white shadow-md rounded-lg tarjeta">
-            <h1 class="text-secondary text-3xl font-bold mb-4">Peticiones de Oración</h1>
-            <form action="submit_prayer_request.php" method="POST" class="space-y-4">
-                <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700">Nombre:</label>
-                    <input type="text" id="name" name="name" required
-                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
+        <div class="container mx-auto mt-24 p-8 bg-white shadow-lg rounded-xl max-w-2xl" x-data="formData()">
+            <h1 class="text-secondary text-3xl font-bold mb-6 text-center">Peticiones de Oración</h1>
+            <p class="text-gray-600 mb-8 text-center">Comparte tu petición con nosotros y estaremos orando por ti</p>
+            
+            <form id="miFormulario" class="space-y-6">
+                <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 justify-center mb-6">
+                    <div class="form-control">
+                        <label class="label cursor-pointer space-x-3">
+                            <input type="checkbox" id="anonimo" x-model="enviarAnonimo"
+                                @change="mostrarNombre = !enviarAnonimo"
+                                class="checkbox checkbox-info">
+                            <span class="label-text">Enviar anónimamente</span>
+                        </label>
+                    </div>
+                    
+                    <div class="form-control">
+                        <label class="label cursor-pointer space-x-3">
+                            <input type="checkbox" id="mostrarNombre" x-model="mostrarNombre"
+                                @change="enviarAnonimo = !mostrarNombre"
+                                class="checkbox checkbox-info">
+                            <span class="label-text">Incluir mi nombre</span>
+                        </label>
+                    </div>
                 </div>
-                <div>
-                    <label for="request" class="block text-sm font-medium text-gray-700">Petición:</label>
-                    <textarea id="request" name="request" rows="4" required
-                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"></textarea>
+
+                <div x-show="mostrarNombre" x-transition
+                    class="form-control w-full">
+                    <label for="nombre" class="label">
+                        <span class="label-text font-medium mb-2">Nombre: </span>
+                    </label>
+                    <input type="text" id="nombre" name="nombre" x-model="nombre" required
+                        class="input input-bordered w-full focus:input-primary"
+                        placeholder="Escribe tu nombre aquí">
                 </div>
-                <button type="submit"
-                    class="w-full bg-secondary text-white py-2 px-4 rounded-md hover:bg-third transition-colors boton">Enviar
-                    Petición</button>
+
+                <div class="form-control w-full">
+                    <label for="campo2" class="label">
+                        <span class="label-text font-medium mb-2">Mensaje: </span>
+                    </label>
+                    <textarea id="campo2" name="campo2" x-model="mensaje" required
+                        class="textarea textarea-bordered h-32 w-full focus:textarea-primary"
+                        placeholder="Escribe tu petición de oración aquí"></textarea>
+                </div>
+
+                <div class="flex justify-center mt-8">
+                    <button type="button" @click="enviarWhatsApp()"
+                        class="btn btn-info gap-2 hover:scale-105 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/>
+                        </svg>
+                        Enviar por WhatsApp
+                    </button>
+                </div>
             </form>
+        </div>
+
     </main>
 
-    <!-- Script para el menú móvil -->
-    <script>
-        document.getElementById('mobile-menu-button').addEventListener('click', function () {
-            const menu = document.getElementById('navigation-menu');
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-            menu.classList.toggle('flex-col');
-            menu.classList.toggle('absolute');
-            menu.classList.toggle('top-20');
-            menu.classList.toggle('left-0');
-            menu.classList.toggle('right-0');
-            menu.classList.toggle('bg-black/50');
-            menu.classList.toggle('p-4');
-            menu.classList.toggle('shadow-md');
-            menu.classList.toggle('space-y-4');
-            menu.classList.toggle('backdrop-blur-sm');
+    <script src="/JS/mensaje.js"></script>
+    <script src="/JS/menu.js"></script>
 
-            // Agregar animación de fade a los elementos del menú
-            const links = menu.getElementsByTagName('a');
-            Array.from(links).forEach((link, index) => {
-                link.classList.toggle('opacity-0');
-                link.classList.toggle('opacity-100');
-                link.style.transitionDelay = `${index * 100}ms`;
-            });
-        });
-    </script>
+
 </body>
 
 </html>
