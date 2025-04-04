@@ -13,7 +13,7 @@
   opacity: 0;
   transform: scale(0.025);
   animation: appear 1s ease-out forwards;
-  animation-play-state: paused;
+  animation-play-state: running;
 }
 
 .scroll.visible {
@@ -29,7 +29,7 @@
 .tarjeta:hover {
   scale: 1.05;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
-  transition-duration: 1s;
+  transition: all 1s cubic-bezier(0.71, 0.04, 0.28, 1.27);
 }
 
 .peticion {
@@ -73,4 +73,5 @@
   opacity: 0;
   transform: scale(0.025);
   animation: appear 1s ease-out forwards;
+  animation-delay: 0.3s;
 }
