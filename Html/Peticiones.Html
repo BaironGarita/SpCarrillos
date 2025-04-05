@@ -39,9 +39,7 @@
         }
     </script>
 
-    <!-- DaisyUI CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 
     <!--Alpine.js-->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
@@ -87,63 +85,104 @@
             </div>
         </nav>
     </header>
-    <main class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container mx-auto mt-24 p-8 bg-white shadow-lg rounded-xl max-w-2xl" x-data="formData()">
-            <h1 class="text-secondary text-3xl font-bold mb-6 text-center">Peticiones de Oración</h1>
-            <p class="text-gray-600 mb-8 text-center">Comparte tu petición con nosotros y estaremos orando por ti</p>
-            
-            <form id="miFormulario" class="space-y-6">
-                <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 justify-center mb-6">
-                    <div class="form-control">
-                        <label class="label cursor-pointer space-x-3">
-                            <input type="checkbox" id="anonimo" x-model="enviarAnonimo"
-                                @change="mostrarNombre = !enviarAnonimo"
-                                class="checkbox checkbox-info">
-                            <span class="label-text">Enviar anónimamente</span>
-                        </label>
-                    </div>
-                    
-                    <div class="form-control">
-                        <label class="label cursor-pointer space-x-3">
-                            <input type="checkbox" id="mostrarNombre" x-model="mostrarNombre"
-                                @change="enviarAnonimo = !mostrarNombre"
-                                class="checkbox checkbox-info">
-                            <span class="label-text">Incluir mi nombre</span>
-                        </label>
-                    </div>
-                </div>
+    <main class="pt-24 pb-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Encabezado de la página -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-merriweather font-bold text-secondary mb-4">Peticiones de Oración</h1>
+                <div class="w-24 h-1 bg-third mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Comparte tu petición con nosotros y estaremos orando por ti.
+                    Tu solicitud será tratada con respeto y confidencialidad.</p>
+            </div>
 
-                <div x-show="mostrarNombre" x-transition
-                    class="form-control w-full">
-                    <label for="nombre" class="label">
-                        <span class="label-text font-medium mb-2">Nombre: </span>
-                    </label>
-                    <input type="text" id="nombre" name="nombre" x-model="nombre" required
-                        class="input input-bordered w-full focus:input-primary"
-                        placeholder="Escribe tu nombre aquí">
-                </div>
-
-                <div class="form-control w-full">
-                    <label for="campo2" class="label">
-                        <span class="label-text font-medium mb-2">Mensaje: </span>
-                    </label>
-                    <textarea id="campo2" name="campo2" x-model="mensaje" required
-                        class="textarea textarea-bordered h-32 w-full focus:textarea-primary"
-                        placeholder="Escribe tu petición de oración aquí"></textarea>
-                </div>
-
-                <div class="flex justify-center mt-8">
-                    <button type="button" @click="enviarWhatsApp()"
-                        class="btn btn-info gap-2 hover:scale-105 transition-transform">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/>
+            <!-- Tarjeta del formulario -->
+            <div class="max-w-3xl mx-auto" x-data="formData()">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <!-- Imagen decorativa superior -->
+                    <div class="h-24 bg-gradient-to-r from-secondary to-third flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
-                        Enviar por WhatsApp
-                    </button>
-                </div>
-            </form>
-        </div>
+                    </div>
 
+                    <!-- Formulario -->
+                    <div class="p-8">
+                        <form id="miFormulario" class="space-y-6">
+                            <!-- Opciones de anonimato -->
+                            <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                                <p class="text-sm text-gray-500 mb-3">Selecciona una opción:</p>
+                                <div
+                                    class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 justify-center">
+                                    <div class="form-control flex items-center">
+                                        <input type="checkbox" id="anonimo" x-model="enviarAnonimo"
+                                            @change="mostrarNombre = !enviarAnonimo"
+                                            class="w-4 h-4 text-third bg-gray-100 border-gray-300 rounded focus:ring-third">
+                                        <label for="anonimo" class="ml-2 text-sm font-medium text-gray-700">
+                                            Enviar anónimamente
+                                        </label>
+                                    </div>
+
+                                    <div class="form-control flex items-center">
+                                        <input type="checkbox" id="mostrarNombre" x-model="mostrarNombre"
+                                            @change="enviarAnonimo = !mostrarNombre"
+                                            class="w-4 h-4 text-third bg-gray-100 border-gray-300 rounded focus:ring-third">
+                                        <label for="mostrarNombre" class="ml-2 text-sm font-medium text-gray-700">
+                                            Incluir mi nombre
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Campo de nombre -->
+                            <div x-show="mostrarNombre" x-transition class="form-control w-full">
+                                <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">
+                                    Nombre:
+                                </label>
+                                <input type="text" id="nombre" name="nombre" x-model="nombre" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-third focus:border-transparent transition-all"
+                                    placeholder="Escribe tu nombre aquí">
+                            </div>
+
+                            <!-- Campo de mensaje -->
+                            <div class="form-control w-full">
+                                <label for="campo2" class="block text-sm font-medium text-gray-700 mb-1">
+                                    Tu petición de oración:
+                                </label>
+                                <textarea id="campo2" name="campo2" x-model="mensaje" required rows="5"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-third focus:border-transparent transition-all"
+                                    placeholder="Comparte tu petición de oración aquí..."></textarea>
+                            </div>
+
+                            <!-- Versículo de ánimo -->
+                            <div class="bg-gray-50 p-4 rounded-lg italic text-center text-sm text-gray-600">
+                                "No se inquieten por nada; más bien, en toda ocasión, con oración y ruego, presenten sus
+                                peticiones a Dios y denle gracias." — Filipenses 4:6
+                            </div>
+
+                            <!-- Botón de envío -->
+                            <div class="flex justify-center mt-8">
+                                <button type="button" @click="enviarWhatsApp()"
+                                    class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-secondary via-third to-fourth hover:from-secondary hover:to-third focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-third transition-all duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z" />
+                                    </svg>
+                                    Enviar por WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Información adicional -->
+                <div class="mt-8 text-center text-sm text-gray-500">
+                    <p>También puedes compartir tu petición durante nuestros servicios.</p>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script src="/JS/mensaje.js"></script>
