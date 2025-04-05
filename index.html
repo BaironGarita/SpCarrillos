@@ -126,7 +126,7 @@
             <div class="text-center">
               <h1 class="text-5xl md:text-6xl text-white font-merriweather mb-8">Iglesia Carrillos Bajo de Poás</h1>
               <a href="Html/Peticiones.Html"
-                class="inline-block bg-third text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-montserrat">
+                class="inline-block bg-third text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors font-montserrat">
                 Tienes Peticiones de Oración?
               </a>
             </div>
@@ -193,6 +193,16 @@
       </div>
     </div>
 
+    <!-- Versículo del Día -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta"
+        data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
+        <h2 class="text-3xl font-merriweather text-secondary mb-4">Versículo del Día:</h2>
+        <div id="verse-content" class="verse-container mb-4 font-montserrat text-gray-700"></div>
+        <h3 id="viewing" class="text-2xl font-merriweather text-secondary mb-4"><span id="verse"></span></h3>
+      </div>
+    </div>
+
     <!-- Mapa -->
     <div class="container mx-auto px-4 py-16">
       <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta"
@@ -248,6 +258,41 @@
 
   <!-- Script para el menú móvil -->
   <script src="/JS/menu.js"></script>
+
+  <!--Script para la API de la Biblia-->
+  <script src="https://cdn.scripture.api.bible/fums/fumsv2.min.js"></script>
+  <script src="../JS/my_key.js"></script>
+  <script>
+    const verse = document.getElementById('verse-content');
+    const verseRef = document.getElementById('verse');
+
+    // Crear una instancia de BibleAPI
+    const bibleAPI = new BibleAPI();
+
+    async function displayRandomVerse() {
+      try {
+        console.log('Obteniendo versículo aleatorio...');
+        const verseData = await bibleAPI.getRandomVerse();
+        console.log('Datos recibidos:', verseData);
+
+        if (!verseData) {
+          throw new Error('No se recibieron datos del versículo');
+        }
+
+        verse.innerHTML = verseData.content || '';
+        verseRef.textContent = verseData.reference || '';
+
+        console.log('Versículo mostrado con éxito');
+      } catch (error) {
+        console.error('Error displaying verse:', error);
+        verse.innerHTML = 'Lo siento, hubo un error al cargar el versículo.';
+      }
+    }
+
+    // Cargar un versículo aleatorio cuando la página se carga
+    displayRandomVerse();
+  </script>
+
   <!--Script para el AOS-->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>

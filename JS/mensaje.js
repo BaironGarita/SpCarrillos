@@ -6,10 +6,6 @@ document.addEventListener("alpine:init", () => {
     mensaje: "",
     numeroTelefono: "+50664068796",
 
-    init() {
-      // Puedes agregar lógica de inicialización aquí si es necesario
-    },
-
     enviarWhatsApp() {
       let mensajeWhatsApp = "";
 
