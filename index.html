@@ -134,8 +134,7 @@
                   x-transition.opacity title="Cerrar Sesión">
                   <svg xmlns="[http://www.w3.org/2000/svg" ](http://www.w3.org/2000/svg")
                     class="inline w-5 h-5 mr-1 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v1" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v1" />
                   </svg>
                   Cerrar Sesión
                 </button>
@@ -190,52 +189,28 @@
       <span>Bienvenido/a, <span x-text="username"></span>! Has iniciado sesión correctamente.</span>
     </div>
   </div>
-  <main class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
+  <main x-data="homeData()" class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
     <!-- Carousel con Tailwind -->
-    <div class="relative w-full h-screen overflow-hidden" x-data="{ activeSlide: 0 }">
-      <!-- Slide 1 -->
-      <div class="absolute inset-0 transition-opacity duration-500"
-        :class="{ 'opacity-100': activeSlide === 0, 'opacity-0': activeSlide !== 0 }">
-        <img class="w-full h-full object-cover" src="img/Carousel-1.webp" alt="Image">
-        <div class="absolute inset-0 bg-black bg-opacity-50">
-          <div class="container mx-auto px-4 h-full flex items-center justify-center">
+    <div class="relative w-full h-screen overflow-hidden">
+      <template x-for="(slide,index) in slides" :key="index">
+        <div class="absolute inset-0 transition-opacity duration-500" :class="{ 'opacity-100': activeSlide === index, 'opacity-0': activeSlide !== index }">
+          <img class="w-full h-full object-cover" :src="slide.img" alt="Slide">
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div class="text-center">
-              <h1 class="text-5xl md:text-6xl text-white font-merriweather mb-8">Iglesia Carrillos Bajo de Poás</h1>
-              <a href="Html/Peticiones.Html"
-                class="inline-block bg-third text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors font-montserrat">
-                Tienes Peticiones de Oración?
-              </a>
+              <h1 class="text-5xl md:text-6xl text-white font-merriweather mb-8" x-text="slide.title"></h1>
+              <a :href="slide.link" class="inline-block bg-third text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors font-montserrat" x-text="slide.buttonText"></a>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="absolute inset-0 transition-opacity duration-500"
-        :class="{ 'opacity-100': activeSlide === 1, 'opacity-0': activeSlide !== 1 }">
-        <img class="w-full h-full object-cover" src="img/Carousel-2.webp" alt="Image">
-        <div class="absolute inset-0 bg-black bg-opacity-50">
-          <div class="container mx-auto px-4 h-full flex items-center justify-center">
-            <div class="text-center">
-              <h1 class="text-5xl md:text-6xl text-white font-merriweather mb-8">Iglesia Carrillos Bajo de Poás</h1>
-              <a href="Html/Peticiones.Html"
-                class="inline-block bg-third text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-montserrat">
-                Tienes Peticiones de Oración?
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      </template>
 
       <!-- Controles del carousel -->
-      <button @click="activeSlide = activeSlide === 0 ? 1 : 0"
-        class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white boton">
+      <button @click="prev()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white boton">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
       </button>
-      <button @click="activeSlide = activeSlide === 0 ? 1 : 0"
-        class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white boton">
+      <button @click="next()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white boton">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
@@ -245,27 +220,14 @@
     <!-- Sección de Visión y Misión -->
     <div class="container mx-auto px-4 py-16">
       <div class="grid md:grid-cols-2 gap-8">
-        <!-- Visión -->
-        <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta"
-          data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
-          <h2 class="text-3xl font-merriweather text-secondary mb-4">Visión</h2>
-          <p class="text-gray-700 font-montserrat mb-4">
-            Conectar en adoración al hombre con Dios, restaurándolo y llevándolo a ser un discípulo
-            comprometido con Jesucristo, su familia, la iglesia, la comunidad y el mundo.
-          </p>
-          <p class="font-merriweather font-bold text-secondary">1 Pedro 2:9</p>
-        </div>
-
-        <!-- Misión -->
-        <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta"
-          data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
-          <h2 class="text-3xl font-merriweather text-secondary mb-4">Misión</h2>
-          <p class="text-gray-700 font-montserrat mb-4">
-            Predicar el evangelio utilizando todas las formas y oportunidades dadas por el Espíritu
-            Santo, discipular, desarrollar madurez, equipar a los santos, crecer integralmente y mantener la armonía.
-          </p>
-          <p class="font-merriweather font-bold text-secondary">Marcos 16:15</p>
-        </div>
+        <!-- Visión y Misión dinámicas -->
+        <template x-for="item in visionMission" :key="item.title">
+          <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
+            <h2 class="text-3xl font-merriweather text-secondary mb-4" x-text="item.title"></h2>
+            <p class="text-gray-700 font-montserrat mb-4" x-text="item.text"></p>
+            <p class="font-merriweather font-bold text-secondary" x-text="item.ref"></p>
+          </div>
+        </template>
       </div>
     </div>
 
@@ -308,8 +270,7 @@
   </main>
   <!-- Script para el sistema de login -->
   <script src="JS/loginSystem.js"></script>
-
-  <!-- Alpine.js para el carousel y la interactividad -->
+  <script src="JS/home.js"></script>
   <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <!-- Script para animaciones de scroll -->
@@ -376,7 +337,6 @@
   <script>
     AOS.init();
   </script>
-
 
   <footer class="bg-primary text-white py-6 mt-auto">
     <div class="container mx-auto px-4">
