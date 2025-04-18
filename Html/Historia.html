@@ -106,45 +106,26 @@
                 crossorigin="anonymous"></script>
         </header>
 
-        <main class="container mx-auto px-4 pt-32 pb-16">
+        <main x-data="historyData()" class="container mx-auto px-4 pt-32 pb-16">
             <h1 class="text-4xl font-merriweather text-primary text-center mb-6">Historia de la Iglesia de Carrillos
                 Bajo
             </h1>
             <p class="text-center text-gray-600 mb-20"><strong>Fecha de Actualización:</strong> Julio 5, 2024</p>
 
+            <template x-for="event in events" :key="event.title">
+                <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta scroll">
+                    <h2 x-text="event.title" class="text-2xl font-merriweather text-secondary mb-2"></h2>
+                    <p x-text="event.description"></p>
+                </section>
+            </template>
             <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta scroll">
-                <h2 class="text-2xl font-merriweather text-secondary mb-2">Fundación y primeros años</h2>
-                <p>La iglesia de Carrillos Bajo dio inicio en el año 1979, en una carpa, bajo la cobertura de la iglesia
-                    evangélica nacional, con el Pastor José Arroyo como líder inicial.</p>
-            </section>
-
-            <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta scroll">
-                <h2 class="text-2xl font-merriweather text-secondary mb-2">Primeros miembros</h2>
-                <p>Algunas de las primeras personas que formaron parte de la iglesia fueron: Marielos Hernández, Solanyi
-                    Díaz, Miguel Oviedo, Leonel Sánchez, entre otros.</p>
-            </section>
-
-            <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta scroll">
-                <h2 class="text-2xl font-merriweather text-secondary mb-2">Traslado y consolidación</h2>
-                <p>En 1980, la iglesia se trasladó a su ubicación actual bajo la cobertura de Santidad Pentecostal, con
-                    el
-                    pastor Gilberth Gamboa al frente.</p>
-            </section>
-
-            <section class="mb-8 bg-white shadow-lg p-6 rounded-lg tarjeta scroll">
-                <h2 class="text-2xl font-merriweather text-secondary mb-4">Pastores a lo largo de los años</h2>
+                <h2 x-text="pastorsSection.title" class="text-2xl font-merriweather text-secondary mb-4"></h2>
                 <ul class="list-disc list-inside space-y-2">
-                    <li>Gilberth Gamboa</li>
-                    <li>Vinicio Vargas</li>
-                    <li>Alejandro Jiménez</li>
-                    <li>Carlos Alfaro</li>
-                    <li>Alberto Herrera</li>
-                    <li>Hernán Guzmán</li>
-                    <li>Melvin Mora</li>
-                    <li>Jorge Villalobos</li>
-                    <li>Leonel Mantamoros</li>
-                    <li>Ana Bermúdez</li>
-                    <li><strong>Actualmente:</strong> Luis Diego Sánchez</li>
+                    <template x-for="pastor in pastors" :key="pastor.name">
+                        <li>
+                            <template x-if="pastor.current"><strong>Actualmente:</strong>&nbsp;</template><span x-text="pastor.name"></span>
+                        </li>
+                    </template>
                 </ul>
             </section>
         </main>
@@ -210,6 +191,7 @@
 
     <!-- Scripts para login y Alpine.js -->
     <script src="../JS/loginSystem.js"></script>
+    <script src="../JS/history.js"></script>
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="../JS/menu.js"></script>
 
