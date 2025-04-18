@@ -5,8 +5,19 @@ document.addEventListener("alpine:init", () => {
     nombre: "",
     mensaje: "",
     numeroTelefono: "+50664068796",
+    errorMsg: "",
 
     enviarWhatsApp() {
+      this.errorMsg = "";
+      if (this.mostrarNombre && (!this.nombre || this.nombre.trim() === "")) {
+        this.errorMsg = "Por favor, ingresa tu nombre.";
+        return;
+      }
+      if (!this.mensaje || this.mensaje.trim() === "") {
+        this.errorMsg = "Por favor ingresa tu petición de oración.";
+        return;
+      }
+
       let mensajeWhatsApp = "";
 
       if (this.enviarAnonimo) {
