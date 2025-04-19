@@ -1,3 +1,4 @@
+/* Animación común para elementos que aparecen */
 @keyframes appear {
   0% {
     opacity: 0;
@@ -9,6 +10,30 @@
   }
 }
 
+/* Variables CSS para propiedades comunes */
+:root {
+  --shadow-hover: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+  --transition-base: 500ms;
+  --bezier-bounce: cubic-bezier(0.71, 0.04, 0.28, 1.27);
+}
+
+/* Clases base reutilizables */
+.transition-base {
+  transition-duration: var(--transition-base);
+}
+
+.shadow-hover:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Animación de aparición */
+.appear-animation {
+  opacity: 0;
+  transform: scale(0.025);
+  animation: appear 1s ease-out forwards;
+}
+
+/* Scroll animation */
 .scroll {
   opacity: 0;
   transform: scale(0.025);
@@ -20,58 +45,54 @@
   animation-play-state: running;
 }
 
-.tarjeta {
-  transition-duration: 500ms;
-  transition-delay: 5ms;
-  transition-timing-function: cubic-bezier(0.71, 0.04, 0.28, 1.27);
-}
-
-.tarjeta:hover {
-  scale: 1.05;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
-  transition: all 1s cubic-bezier(0.71, 0.04, 0.28, 1.27);
-}
-
-.peticion {
-  transition-duration: 500ms;
-}
-
-.peticion:hover {
-  scale: 1.025;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
-}
-
-.boton {
-  transition-duration: 500ms;
-}
-.boton:hover {
-  scale: 1.125;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
-}
-
-.icono {
-  border-radius: 50%;
-  transition-duration: 500ms;
-}
-.icono:hover {
-  scale: 1.5;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes textos {
-  0% {
-    opacity: 0;
-    transform: scale(0.025);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
+/* Texto animado */
 .textos {
   opacity: 0;
   transform: scale(0.025);
   animation: appear 1s ease-out forwards;
   animation-delay: 0.3s;
+}
+
+/* Tarjeta */
+.tarjeta {
+  transition-duration: var(--transition-base);
+  transition-delay: 5ms;
+  transition-timing-function: var(--bezier-bounce);
+}
+
+.tarjeta:hover {
+  scale: 1.05;
+  box-shadow: var(--shadow-hover);
+  transition: all 1s var(--bezier-bounce);
+}
+
+/* Petición */
+.peticion {
+  transition-duration: var(--transition-base);
+}
+
+.peticion:hover {
+  scale: 1.025;
+  box-shadow: var(--shadow-hover);
+}
+
+/* Botón */
+.boton {
+  transition-duration: var(--transition-base);
+}
+
+.boton:hover {
+  scale: 1.125;
+  box-shadow: var(--shadow-hover);
+}
+
+/* Icono */
+.icono {
+  border-radius: 50%;
+  transition-duration: var(--transition-base);
+}
+
+.icono:hover {
+  scale: 1.5;
+  box-shadow: var(--shadow-hover);
 }
