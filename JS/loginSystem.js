@@ -47,11 +47,10 @@ function loginSystem() {
       });
     },
     sendLoginNotification() {
-      const serviceID = "service_o1rvzf7";
+      const serviceID = "service_bvvhohp";
       const templateID = "template_otmf7a8";
       const templateParams = {
         name: this.username,
-        email_to: "bairongaba@gmail.com",
         time: new Date().toLocaleString(),
         message: "Se da por notificado el inicio de sesion.",
       };
