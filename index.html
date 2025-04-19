@@ -242,18 +242,21 @@
 
     <!-- Nueva sección Video -->
     <div x-show="$store.auth.isLoggedIn" x-cloak x-transition class="container mx-auto px-4 py-16" data-aos="fade-up"
-      data-aos-duration="1000" data-aos-easing="ease-out">
-      <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta">
-        <h2 class="text-3xl font-merriweather text-secondary mb-4">Video</h2>
-        <div class="w-full aspect-video mb-4">
-          <iframe class="w-full h-full" src="https://drive.google.com/file/d/1BvHfgOYUxeVBpxzJvAbLX6YDSoDr-gkJ/preview"
-            allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <p class="text-gray-700 font-montserrat">Si no se reproduce, haz clic <a
-            href="https://drive.google.com/file/d/1BvHfgOYUxeVBpxzJvAbLX6YDSoDr-gkJ/view?usp=sharing" target="_blank"
-            class="text-secondary underline">aquí</a>.</p>
+    data-aos-duration="1000" data-aos-easing="ease-out">
+    <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta">
+      <h2 class="text-3xl font-merriweather text-secondary mb-4">Video</h2>
+      <div class="w-full aspect-video mb-4">
+        <iframe class="w-full h-full"
+                :src="$store.auth.isLoggedIn ? 'https://drive.google.com/file/d/1BvHfgOYUxeVBpxzJvAbLX6YDSoDr-gkJ/preview' : ''"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+        </iframe>
       </div>
+      <p class="text-gray-700 font-montserrat">Si no se reproduce, haz clic <a
+          href="https://drive.google.com/file/d/1BvHfgOYUxeVBpxzJvAbLX6YDSoDr-gkJ/view?usp=sharing" target="_blank"
+          class="text-secondary underline">aquí</a>.</p>
     </div>
+  </div>
 
     <!-- Versículo del Día -->
     <div class="container mx-auto px-4 py-16">
