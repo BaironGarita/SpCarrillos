@@ -134,8 +134,7 @@
                   x-transition.opacity title="Cerrar Sesión">
                   <svg xmlns="[http://www.w3.org/2000/svg" ](http://www.w3.org/2000/svg")
                     class="inline w-5 h-5 mr-1 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v1" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v1" />
                   </svg>
                   Cerrar Sesión
                 </button>
@@ -240,6 +239,17 @@
       </div>
     </div>
 
+    <!-- Nueva sección Video -->
+    <div x-show="$store.auth.isLoggedIn" x-cloak class="container mx-auto px-4 py-16" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
+      <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta">
+        <h2 class="text-3xl font-merriweather text-secondary mb-4">Video</h2>
+        <div class="w-full aspect-video mb-4">
+          <iframe class="w-full h-full" src="https://drive.google.com/file/d/1BvHfgOYUxeVBpxzJvAbLX6YDSoDr-gkJ/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <p class="text-gray-700 font-montserrat">Si no se reproduce, haz clic <a href="https://drive.google.com/file/d/1BvHfgOYUxeVBpxzJvAbLX6YDSoDr-gkJ/view?usp=sharing" target="_blank" class="text-secondary underline">aquí</a>.</p>
+      </div>
+    </div>
+
     <!-- Versículo del Día -->
     <div class="container mx-auto px-4 py-16">
       <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta"
@@ -280,6 +290,11 @@
   <!-- Script para el sistema de login -->
   <script src="JS/loginSystem.js"></script>
   <script src="JS/home.js"></script>
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.store('auth', { isLoggedIn: localStorage.getItem('isLoggedIn') === 'true' });
+    });
+  </script>
   <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <!-- Script para el menú móvil -->
