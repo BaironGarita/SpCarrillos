@@ -242,21 +242,20 @@
 
     <!-- Nueva sección Video -->
     <div x-show="$store.auth.isLoggedIn" x-cloak x-transition class="container mx-auto px-4 py-16" data-aos="fade-up"
-    data-aos-duration="1000" data-aos-easing="ease-out">
-    <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta">
-      <h2 class="text-3xl font-merriweather text-secondary mb-4">Video</h2>
-      <div class="w-full aspect-video mb-4">
-        <iframe class="w-full h-full"
-                :src="$store.auth.isLoggedIn ? 'https://drive.google.com/file/d/1BvHfgOYUxeVBpxzJvAbLX6YDSoDr-gkJ/preview' : ''"
-                allow="autoplay; encrypted-media"
-                allowfullscreen>
-        </iframe>
+      data-aos-duration="1000" data-aos-easing="ease-out">
+      <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 tarjeta">
+        <h2 class="text-3xl font-merriweather text-secondary mb-4">Video</h2>
+        <div class="w-full aspect-video mb-4">
+          <iframe class="w-full h-full"
+            :src="$store.auth.isLoggedIn ? 'https://drive.google.com/file/d/1BvHfgOYUxeVBpxzJvAbLX6YDSoDr-gkJ/preview' : ''"
+            allow="autoplay; encrypted-media" allowfullscreen>
+          </iframe>
+        </div>
+        <p class="text-gray-700 font-montserrat">Si no se reproduce, haz clic <a
+            href="https://drive.google.com/file/d/1BvHfgOYUxeVBpxzJvAbLX6YDSoDr-gkJ/view?usp=sharing" target="_blank"
+            class="text-secondary underline">aquí</a>.</p>
       </div>
-      <p class="text-gray-700 font-montserrat">Si no se reproduce, haz clic <a
-          href="https://drive.google.com/file/d/1BvHfgOYUxeVBpxzJvAbLX6YDSoDr-gkJ/view?usp=sharing" target="_blank"
-          class="text-secondary underline">aquí</a>.</p>
     </div>
-  </div>
 
     <!-- Versículo del Día -->
     <div class="container mx-auto px-4 py-16">
@@ -295,27 +294,24 @@
       </div>
     </div>
   </main>
-  <!-- Script para el sistema de login -->
-  <script src="JS/loginSystem.js"></script>
-  <script src="JS/home.js"></script>
-  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <script src="JS/loginSystem.js" defer></script>
+  <script src="JS/home.js" defer></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script>
     document.addEventListener('alpine:init', () => {
       Alpine.store('auth', { isLoggedIn: localStorage.getItem('isLoggedIn') === 'true' });
     });
   </script>
+  <script src="/JS/menu.js" defer></script>
 
-  <!-- Script para el menú móvil -->
-  <script src="/JS/menu.js"></script>
-
-  <!--Script para la API de la Biblia-->
-  <script src="https://cdn.scripture.api.bible/fums/fumsv2.min.js"></script>
+  <script src="https://cdn.scripture.api.bible/fums/fumsv2.min.js" async></script>
   <script type="module" src="/JS/my_key.js"></script>
-
-  <!--Script para el AOS-->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script>
-    AOS.init();
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init();
+    });
   </script>
 
   <footer class="bg-primary text-white py-6 mt-auto">
