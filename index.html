@@ -310,37 +310,6 @@
   <!--Script para la API de la Biblia-->
   <script src="https://cdn.scripture.api.bible/fums/fumsv2.min.js"></script>
   <script src="../JS/my_key.js"></script>
-  <script>
-    const verse = document.getElementById('verse-content');
-    const verseRef = document.getElementById('verse');
-
-    // Crear una instancia de BibleAPI
-    const bibleAPI = new BibleAPI();
-
-    async function displayRandomVerse() {
-      try {
-        console.log('Obteniendo versículo aleatorio...');
-        const verseData = await bibleAPI.getRandomVerse();
-        console.log('Datos recibidos:', verseData);
-
-        if (!verseData) {
-          throw new Error('No se recibieron datos del versículo');
-        }
-
-        verse.innerHTML = verseData.content || '';
-        verseRef.textContent = verseData.reference || '';
-
-        console.log('Versículo mostrado con éxito');
-      } catch (error) {
-        console.error('Error displaying verse:', error);
-        verse.innerHTML = 'Lo siento, hubo un error al cargar el versículo.';
-      }
-    }
-
-    // Cargar un versículo aleatorio cuando la página se carga
-    displayRandomVerse();
-  </script>
-
   <!--Script para el AOS-->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>

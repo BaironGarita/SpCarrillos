@@ -94,4 +94,17 @@ class BibleAPI {
 window.BibleAPI = BibleAPI;
 window.PREDEFINED_VERSES = PREDEFINED_VERSES;   
 
+// Inicializar y mostrar un versículo aleatorio en la página
+async function initRandomVerse(contentSelector = '#verse-content', refSelector = '#verse') {
+  try {
+    const api = new BibleAPI();
+    const verseData = await api.getRandomVerse();
+    document.querySelector(contentSelector).innerHTML = verseData.content || '';
+    document.querySelector(refSelector).textContent = verseData.reference || '';
+  } catch (error) {
+    console.error('Error al mostrar versículo:', error);
+    document.querySelector(contentSelector).innerHTML = 'Lo siento, hubo un error al cargar el versículo.';
+  }
+}
 
+document.addEventListener('DOMContentLoaded', () => initRandomVerse());
