@@ -20,24 +20,7 @@
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        merriweather: ['Merriweather', 'serif'],
-                        montserrat: ['Montserrat', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#2d3e50',
-                        secondary: '#005f6b',
-                        third: '#3498db',
-                        fourth: '#00b4cc',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="/JS/tailwind_config.js"></script>
 
 
 
@@ -97,7 +80,7 @@
             <div class="max-w-3xl mx-auto" x-data="formData()">
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                     <!-- Imagen decorativa superior -->
-                    <div class="h-24 bg-gradient-to-r from-secondary to-third flex items-center justify-center">
+                    <div class="h-24 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -165,7 +148,7 @@
                             <!-- Botón de envío -->
                             <div class="flex justify-center mt-8">
                                 <button type="button" @click="enviarWhatsApp()"
-                                    class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-secondary via-third to-fourth hover:from-secondary hover:to-third focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-third transition-all duration-300">
+                                    class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-primary via-third to-secondary hover:from-secondary hover:to-third focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-third transition-all duration-300">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24"
                                         fill="currentColor">
                                         <path
