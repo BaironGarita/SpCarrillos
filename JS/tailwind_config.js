@@ -2,8 +2,8 @@ tailwind.config = {
   theme: {
     extend: {
       fontFamily: {
-        merriweather: ["Merriweather", "serif"],
-        montserrat: ["Montserrat", "sans-serif"],
+        merriweather: ["Georgia", "serif"],
+        montserrat: ["Melodrama", "sans-serif"],
       },
       colors: {
         primary: "#272C5F",
