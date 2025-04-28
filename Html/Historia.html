@@ -57,7 +57,7 @@
                 <div class="container mx-auto px-4">
                     <div class="flex justify-between items-center h-20">
                         <a href="../index.html" class="flex-shrink-0 icono">
-                            <img src="../img/Logo letras blancas.svg" alt="Logo" class="h-16 w-auto">
+                            <img src="../img/Favicon.svg" alt="Logo" class="h-16 w-auto">
                         </a>
 
                         <!-- Botón móvil -->
@@ -123,7 +123,8 @@
                 <ul class="list-disc list-inside space-y-2">
                     <template x-for="pastor in pastors" :key="pastor.name">
                         <li>
-                            <template x-if="pastor.current"><strong>Actualmente:</strong>&nbsp;</template><span x-text="pastor.name"></span>
+                            <template x-if="pastor.current"><strong>Actualmente:</strong>&nbsp;</template><span
+                                x-text="pastor.name"></span>
                         </li>
                     </template>
                 </ul>
