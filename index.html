@@ -6,6 +6,15 @@
     [x-cloak] {
       display: none !important;
     }
+    @font-face {
+      font-family: 'Melodrama';
+      src: url('Css/fonts/Melodrama-Regular.woff2') format('woff2'),
+           url('Css/fonts/Melodrama-Regular.woff') format('woff'),
+           url('Css/fonts/Melodrama-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
   </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -71,7 +80,7 @@
   <link rel="stylesheet" href="Css/Animations.css">
 </head>
 
-<body class="bg-gray-100 text-gray-900 font-montserrat">
+<body class="bg-gray-100 text-gray-900 font-melodrama">
   <div x-data="loginSystem()">
     <header class="bg-primary text-white shadow-md fixed top-0 left-0 w-full z-50">
       <nav class="fixed top-0 left-0 w-full bg-primary text-white shadow-md z-50 ">
@@ -250,7 +259,7 @@
     <div class="container mx-auto px-4 py-16">
       <div class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500" data-aos="fade-up"
         data-aos-duration="1000" data-aos-easing="ease-out">
-        <h2 class="text-3xl font-merriweather text-secondary mb-4">Ubicación</h2>
+        <h2 class="text-3xl font-georgia text-secondary mb-4">Ubicación</h2>
         <div class="w-full h-[450px] relative rounded-lg overflow-hidden">
           <iframe class="w-full h-full absolute top-0 left-0"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d584.0331469535363!2d-84.27905870478364!3d10.02584981346183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa057004589e1dd%3A0x7498b745644b2af5!2sIglesia%20Santidad%20Pentecostal%20de%20Carrillos%20Bajo!5e0!3m2!1ses-419!2scr!4v1741386676462!5m2!1ses-419!2scr"

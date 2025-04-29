@@ -27,13 +27,21 @@
         [x-cloak] {
             display: none !important;
         }
+        @font-face {
+            font-family: 'Melodrama';
+            src: url('../Css/fonts/Melodrama-Regular.woff2') format('woff2'),
+                 url('../Css/fonts/Melodrama-Regular.woff') format('woff'),
+                 url('../Css/fonts/Melodrama-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
     </style>
-    <link rel="stylesheet" href="https://cdn.fontshare.com/etc/melodrama.css">
     <link rel="stylesheet" href="../Css/Animations.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 text-gray-900 font-montserrat">
+<body class="bg-gray-100 text-gray-900 font-melodrama">
     <div x-data="loginSystem()">
         <header class="bg-primary text-white shadow-md fixed top-0 left-0 w-full z-50">
             <nav class="fixed top-0 left-0 w-full bg-primary text-white shadow-md z-50">
@@ -117,8 +125,7 @@
         </div>
         <main class="container mx-auto px-4 pt-32 pb-16">
 
-            <h1 class="text-4xl lg:text-5xl font-merriweather text-primary text-center mb-4 tracking-tight">Nuestros
-                Departamentos</h1>
+            <h1 class="text-4xl lg:text-5xl font-georgia text-primary text-center mb-4 tracking-tight">Nuestros Departamentos</h1>
             <p class="text-center text-gray-600 mb-4 font-montserrat max-w-2xl mx-auto">Pues así como en un cuerpo
                 tenemos
                 muchos miembros, pero

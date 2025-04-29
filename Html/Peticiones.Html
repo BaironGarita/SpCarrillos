@@ -27,12 +27,22 @@
     <!--Alpine.js-->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-    <link rel="stylesheet" href="https://cdn.fontshare.com/etc/melodrama.css">
+    <style>
+      @font-face {
+        font-family: 'Melodrama';
+        src: url('../Css/fonts/Melodrama-Regular.woff2') format('woff2'),
+             url('../Css/fonts/Melodrama-Regular.woff') format('woff'),
+             url('../Css/fonts/Melodrama-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
     <link rel="stylesheet" href="../Css/Animations.css">
 
 </head>
 
-<body class="bg-gray-100 text-gray-900 font-montserrat">
+<body class="bg-gray-100 text-gray-900 font-melodrama">
     <header class="bg-primary text-white shadow-md fixed top-0 left-0 w-full z-50">
         <nav class="fixed top-0 left-0 w-full bg-primary text-white shadow-md z-50 ">
             <div class="container mx-auto px-4">
@@ -66,7 +76,7 @@
         <div class="container mx-auto px-4">
             <!-- Encabezado de la página -->
             <div class="text-center mb-12">
-                <h1 class="text-4xl font-merriweather font-bold text-secondary mb-4">Peticiones de Oración</h1>
+                <h1 class="text-4xl font-georgia font-bold text-secondary mb-4">Peticiones de Oración</h1>
                 <div class="w-24 h-1 bg-third mx-auto mb-6"></div>
                 <p class="text-gray-600 max-w-2xl mx-auto">Comparte tu petición con nosotros y estaremos orando por ti.
                     Tu solicitud será tratada con respeto y confidencialidad.</p>
