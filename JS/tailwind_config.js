@@ -9,7 +9,7 @@ tailwind.config = {
         primary: "#272C5F",
         secondary: "#D8B315",
         accent: "#3498db",
-        third: "#E63946",   // Ejemplo, puedes cambiar el valor
+        third: "#E63946",
         fourth: "#3498db",
       },
     },
