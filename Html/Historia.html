@@ -31,11 +31,12 @@
         [x-cloak] {
             display: none !important;
         }
+
         @font-face {
             font-family: 'Melodrama';
             src: url('../Css/fonts/Melodrama-Regular.woff2') format('woff2'),
-                 url('../Css/fonts/Melodrama-Regular.woff') format('woff'),
-                 url('../Css/fonts/Melodrama-Regular.ttf') format('truetype');
+                url('../Css/fonts/Melodrama-Regular.woff') format('woff'),
+                url('../Css/fonts/Melodrama-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -49,7 +50,7 @@
             <nav class="fixed top-0 left-0 w-full bg-primary text-white shadow-md z-50">
                 <div class="container mx-auto px-4">
                     <div class="flex justify-between items-center h-20">
-                        <a href="../index.html" class="flex-shrink-0 icono">
+                        <a href="../index.html" class="flex-shrink-0">
                             <img src="../img/Favicon.svg" alt="Logo" class="h-16 w-auto">
                         </a>
 
@@ -100,7 +101,8 @@
         </header>
 
         <main x-data="historyData()" class="container mx-auto px-4 pt-32 pb-16">
-            <h1 class="text-4xl font-georgia text-primary text-center mb-6">Historia de la Iglesia de Carrillos Bajo</h1>
+            <h1 class="text-4xl font-georgia text-primary text-center mb-6">Historia de la Iglesia de Carrillos Bajo
+            </h1>
             <p class="text-center text-gray-600 mb-20"><strong>Fecha de Actualización:</strong> Julio 5, 2024</p>
 
             <template x-for="event in events" :key="event.title">
