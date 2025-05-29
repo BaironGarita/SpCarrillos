@@ -77,9 +77,9 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 Para más información sobre la iglesia o el proyecto, no dudes en contactarnos a través de:
 
-- 📧 Email: [Tu email]
+- 📧 Email: ingbairongarita@gmail.com
 - 🌐 Sitio web: [Tu sitio web]
-- 📱 Teléfono: [Tu teléfono]
+- 📱 Teléfono: +50687889979
 
 ---
 
